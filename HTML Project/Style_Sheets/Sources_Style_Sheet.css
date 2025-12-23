@@ -86,7 +86,7 @@ text-decoration: underline;
 #sources_panel{
 	background-color: white;
 	position:relative;
-	width: 65%;
+	width: 80%;
 	border-radius: 7px;
 	gap: 100px;
 	margin:auto;
@@ -104,9 +104,12 @@ pre{
 	text-align: center;
  	font-family: Arial, sans-serif;
 	font-size: 1vw;
-	white-space: pre-wrap;
+	white-space: pre-wrap;   /* Preserve whitespace and allow wrapping */
+  word-wrap: break-word;      /* Break long words if needed */
+  overflow-wrap: break-word;
 }
 /*#endregion Sources Panel*/
+
 
 
 
