@@ -1,0 +1,578 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #97e0f7, #b8ddff);
+	background-attachment: fixed;
+    color: #002f6c;
+    text-align: center;
+	align-items: center;
+}
+
+
+
+/*#region Header*/
+#Head_Part h2 {
+	font-size:1.5vw;
+	margin-top:5px;
+	margin-bottom:7px;
+}
+/*Stuff inside the Header*/
+
+
+/*Blue Box of the header*/
+#Head_Part{
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:8%;
+	background-color: #5B9BD5;
+	z-index:2;
+	min-height: 40px;
+	transition: all 1s ease;
+}
+
+
+/*Grey Box of the Header*/
+#Second_Head{
+	position:fixed;
+	top: 8%;
+	width:100%;
+	height:3%;
+	background-color: #404040;
+	z-index:1;
+	margin-bottom:0px;
+    /*overflow: hidden;*/
+	display: flex;
+    justify-content: center;   
+    align-items: center;       
+    padding: 0.5vw 0; 
+	min-height: 20px;
+	transition: all 1s ease;
+	
+}
+
+/*Title of the Header (Game Development)*/
+#title{
+	display:inline-block;
+	margin-top:0.3%;
+	margin-bottom: 0px;
+	width:80%;
+	font-size:2vw;
+	justify-content: center;
+	z-index: 3;
+	border-bottom: 0.1em solid;
+	border-color: white;
+
+}
+
+
+/*Table inside the Header*/
+#table_header{
+	position:relative;
+	bottom:0;
+	z-index:3;
+	color:white;
+	display:inline-block;
+	border-collapse:collapse;
+	width:max-content;
+    gap: 4vw;
+	text-decoration: none;   
+}
+.menu_data{
+	font-size:1.6vw;
+	border-left: 0;
+	border-right: 0;
+	border-left:solid;
+	border-right:solid;
+	padding-right:6vw;
+	padding-left:6vw;
+	margin-bottom:0;
+	padding-bottom: 0;
+	position:relative;
+	text-decoration: none;
+	    
+}
+
+#menu_button{
+	position: relative;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+
+}
+
+#menu_button p{
+    margin: 0;       /* remove default paragraph spacing */
+    padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+.menu_data a{
+	text-decoration: none;
+	color: white;
+}
+.menu_data a:hover{
+border-left: 2px solid;
+border-right: 2px solid;
+}
+
+
+
+#popup_menu {
+	opacity: 0;
+	
+	color:#002f6c;
+	display: block;
+    position: fixed; 
+	    top: 12%;
+    left: 32.63%;
+    width: 14.5%;
+    background: white;
+    padding: 1vw;
+    z-index: 3;
+	transition: opacity 0.5s;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	text-decoration: none;
+	border: 0;
+	visibility: hidden;
+}
+
+#menu_button:hover #popup_menu,
+#popup_menu:hover {
+	visibility: visible;
+	opacity: 1; 
+
+}
+
+
+#popup_menu a {
+	font-size: 1.2vw;
+    display: block;    
+    padding: 0.5vw 0;      
+    color: #002f6c;         
+    text-decoration: none;   
+
+}
+
+#popup_menu a:hover{
+	border: 1px solid;
+}
+
+/*Header Ending*/
+/*#endregion Header*/
+
+
+/*#region Text Blocks*/
+
+#text_block_one
+{
+	margin-top:10%;
+}
+
+
+/*similar to topic_sections*/
+.text_blocks{
+	text-align: left;
+	display:flex;
+	flex-direction: column;
+	position: relative;
+	left:50%;
+	width:80%;
+	height:auto;
+	background-color:white;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius:10px;
+	margin-top:5%;
+	margin-bottom:5%;
+	padding:4%;
+	overflow: visible;
+	font-size: 1vw;
+	transform: translateX(-50%)
+}
+
+.text_blocks h2{
+width: 100%;
+margin: 0;
+	
+}
+
+
+.text_passages{
+margin-left: 1%;
+  white-space: pre-wrap;      /* Wrap long lines */
+  word-wrap: break-word;      /* Break long words if needed */
+  overflow-wrap: break-word;  
+
+}
+
+/*when using pre it copies the layout but if the layout goes outside of the box it gets cut but by wrapping and breaking it resists screen size variations*/
+pre {
+  white-space: pre-wrap;      /* Wrap long lines */
+  word-wrap: break-word;      /* Break long words if needed */
+  overflow-wrap: break-word;  
+
+}
+
+#Topic_physics
+{
+  font-family: Arial, sans-serif;
+  white-space: pre-wrap;      /* Wrap long lines */
+  word-wrap: break-word;      /* Break long words if needed */
+  overflow-wrap: break-word;  
+}
+
+#text_part_move_up
+{
+	transform: translateY(-400%);
+}
+
+#text_part_2_move_up{
+	transform: translateY(-50%);
+	  margin-top: 0;   /* remove default top margin */
+  margin-bottom: 0; /* remove default bottom margin if needed */
+}
+
+
+#H2_move_up
+{
+	position: relative;
+	top: -50%;
+	
+}
+
+#code_example_summary
+{
+	position: relative;
+}
+
+#Pseudocode_problems_to_move_up
+{
+	position: relative;
+}
+
+/*#endregion Text Blocks*/
+
+
+/*#region Code Panel*/
+/*this modifies the little box with the code in it*/
+.code-panel
+{
+	
+	position:relative;
+	right: -40%;
+	background-color:#1e1e1e;
+	color:#d4d4d4;
+	font-family: "JetBrains Mono", Consolas, monospace; /*used this because i thought it looks like a code font*/
+	padding:1%;
+	border-radius: 2%;
+	width:fit-content; /*width of the box is relative to how much is in the box*/
+	font-size:1.3vw;
+	box-shadow:0 0 20px rgba(0, 0, 0, 0.4);
+	white-space:pre; /*this can be used instead of <pre> but it affects the entire thing which in this case it should*/
+}
+
+.code-panel_eg
+{
+	position:relative;
+	background-color:#1e1e1e;
+	color:#d4d4d4;
+	font-family: "JetBrains Mono", Consolas, monospace; /*used this because i thought it looks like a code font*/
+	padding:1%;
+	border-radius: 1%;
+	width:fit-content; /*width of the box is relative to how much is in the box*/
+	font-size:1.3vw;
+	box-shadow:0 0 20px rgba(0, 0, 0, 0.4);
+	white-space:pre; /*this can be used instead of <pre> but it affects the entire thing which in this case it should*/
+}
+#code_example_summary
+{
+	position: relative;
+}
+
+/*when seeing java code stuff is usually colored which this does*/
+.method { color: #6a9955; } /* green */
+.variable { color: #9cdcfe; } /* light blue */
+.punctuation { color: #d4d4d4; } /* grey */
+.brace { color: #d4d4d4; } /* grey */
+.keyword { color: #d18616; font-weight: bold; }/* orange/yellow */ 
+.comment { color: #608b4e; font-style: italic; } /* dark green */
+.string { color: #ce9178; } /* light red/orange */
+.number { color: #b5cea8; } /* light green */
+
+
+/*each line gets some padding is a block so it uses all space*/
+.line
+{
+display:block;
+padding: 0.5% 1%;
+border-radius:0.8%;
+}
+
+
+/*by perpertually giving and taking the class active from certain lines i can create the effect that it loops*/
+.active 
+{
+background-color:#424647;
+}
+
+
+.code-panel_if_w
+{
+	
+	position:relative;
+
+	background-color:#1e1e1e;
+	color:#d4d4d4;
+	font-family: "JetBrains Mono", Consolas, monospace; /*used this because i thought it looks like a code font*/
+	padding:1%;
+	border-radius: 2%;
+	width:fit-content; /*width of the box is relative to how much is in the box*/
+	font-size:1.3vw;
+	box-shadow:0 0 20px rgba(0, 0, 0, 0.3);
+	white-space:pre; /*this can be used instead of <pre> but it affects the entire thing which in this case it should*/
+	margin: 1%;
+	margin-top: 1.3%;
+}
+
+#Pseudocode_problems_to_move_up
+{
+	font-family: Arial, sans-serif;
+}
+
+
+.code_effect
+ {
+	
+    font-family: "Courier New", monospace;
+    background-color: #f3f3f3;
+    padding: 0.5% 1%;
+    border-radius: 4px;
+    font-size: 1.05rem;
+	margin: 1%;
+	width: fit-content;
+}
+
+
+
+/*#endregion Code Panel*/
+
+
+/*#region Coordinate Graph Styles*/
+
+.graph {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+
+  /* define scale */
+  --unit: 30px; /* 1 unit = 30px */
+}
+
+/* axes */
+.graph::before,
+.graph::after {
+  content: "";
+  position: absolute;
+  background: black;
+}
+
+.graph::before { /* x-axis */
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.graph::after { /* y-axis */
+  height: 100%;
+  width: 1px;
+  left: 50%;
+}
+
+.point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+
+  left: calc(50% + var(--x) * var(--unit));
+  top: calc(50% - var(--y) * var(--unit));
+}
+.coord_graph
+{
+	position: relative;
+left: 25%;
+transform: translateY(-30%);
+transition: all 0.5s;
+ display: block;   /* make sure it behaves like a block element */
+  margin-bottom: 0; /* remove default bottom margin/spacing */
+}
+
+.coord_graph_last_eg
+{
+	position: relative;	
+	left: 30%;
+	transition: all 0.5s;
+	display: block;   /* make sure it behaves like a block element */
+	margin-bottom: 0; /* remove default bottom margin/spacing */
+}
+
+.graph_label
+{
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.point_group:hover .graph_label
+{
+opacity: 1;
+}
+
+
+#Moving_Graph
+{
+transform: translateY(-125%);
+
+}
+/*#endregion Coordinate Graph Styles*/
+
+/*#region Images*/
+
+	/*#region 2D vs 3D Images*/
+#picture_container {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    gap: 2rem;               /* space between images */
+}
+#Mario_2d_Sprite,
+#Mario_3d_Model {
+    position: relative;
+    width: 25%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+/*#endregion 2D vs 3D Images*/
+
+	/*#region Usage Images*/
+#usage_sprite_picture_container {
+	gap: 2rem;               /* space between images */
+}
+#Sonic_picture {
+	position: relative;
+	width: 30%;
+	left: 30%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+#UI_picture {
+	position: relative;
+	width: 30%;
+	left: 30%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+#FPS_picture {
+	position: relative;
+	width: 30%;
+	left: 30%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+#usage_plattformer_picture_container li 
+{
+position: relative;
+transform: translateY(600%);	
+}	
+
+#usage_ui_picture_container li 
+{	
+position: relative;
+transform: translateY(600%);	
+}
+#usage_model_picture_container li 
+{
+position: relative;
+transform: translateY(600%);	
+}
+
+/*#endregion Usage Images*/
+
+
+/*#region Key Concepts Images*/
+#key_concepts_picture_container {
+	display: flex;
+	justify-content: center; /* horizontal */
+	align-items: center;     /* vertical */
+	gap: 2rem;               /* space between images */
+	flex-wrap: wrap;         /* allow wrapping to next line */
+}
+
+#Frame_Rigging_example{
+	position: relative;
+	width: 30%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+#Hitbox_example {
+	position: relative;
+	width: 35%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+#Vertex_Edge_Face_example {
+	position: relative;
+	width: 35%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+#Texture_example {
+	position: relative;
+	width: 37%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+/*#endregion Key Concepts Images*/
+
+
+/*#endregion Images*/
+
+
+/*#region videos*/
+#animation_picture_container {
+	position: relative;
+	display: flex;
+	justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    
+}
+
+#Walking_3d {
+	width: 40%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+
+
+#Running_2d {
+	width: 40%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	border-radius: 4%;
+}
+/*#endregion videos*/
+
+
+
+

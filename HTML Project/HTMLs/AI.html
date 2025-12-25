@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<!--The entire head and header part is identical to the starting page-->
+
+	<head>
+		<title> Game AI & Logic</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../Style_Sheets/Info_Pages_Style_Sheet.css">
+	</head>
+	<body>
+			<header>
+		
+		<div id="Head_Part"> <p id="title"> Game AI & Logic</p></div>
+		
+		
+		
+
+		<div id="Second_Head"> 
+			<table id="table_header"> 
+				<tr> <td class="menu_data" id="menu_button">
+					<p id= "Menu_bar"> Menu</p>
+						<div id="popup_menu">
+        					<a href="Game_Development_Website.html">Back to Start</a>
+       						<a href="Basics.html">The Basics</a>
+       						<a href="Physics.html">The Physics of Videogames</a>
+							<a href="Sources.html">Sources</a>
+   						 </div> 
+					</td> 
+				<td class="menu_data"> <a href="Sources.html">Sources</a> </td> </tr>
+			</table>
+		</div>
+		
+				
+		
+		</header>
+	
+	
+
+
+
+
+
+	<section class="text_blocks" id="text_block_one">
+        <h2>Pathfinding</h2> 
+        
+        <p id="text_passage_one"> 
+    
+  <h3>What Is Pathfinding?</h3>
+<p><strong>Pathfinding</strong> is the process of finding a <strong>route from one point to another</strong> while avoiding obstacles.
+<br>
+In games, pathfinding is used for:</p>
+<ul>
+<li>Enemies chasing the player</li>
+<li>NPCs walking through towns</li>
+<li>Units moving in strategy games</li>
+<li>Animals roaming environments</li>
+</ul>
+Without pathfinding, AI would either:
+<ul>
+<li>Walk in straight lines</li>
+<li>Get stuck on walls</li>
+<li>Feel unintelligent</li>
+</ul>
+<p></p>
+<h3>The Core Problem</h3>
+Given:
+<ul>
+<li>A <strong>start position</strong></li>
+<li>A <strong>target position</strong></li>
+<li>A world with <strong>obstacles</strong></li>
+</ul>
+The goal is to find:
+<ul>
+<li>The <strong>best path</strong></li>
+<li>Using the <strong>least cost</strong></li>
+<li>In a <strong>reasonable amount of time</strong></li>
+</ul>
+“Best” usually means shortest, safest, or fastest.
+<p></p>
+
+<h3>Representing the World</h3>
+<p>AI doesn’t see the world like players do.
+<br>
+Instead, it uses simplified data:</p>
+
+<h4>Grid-Based</h4>
+<ul>
+<li>World is divided into tiles</li>
+<li>Each tile is walkable or blocked</li>
+<li>Common in 2D games and strategy games</li>
+</ul>
+
+<h4>Node Graphs</h4>
+<ul>
+<li>Important points connected by edges</li>
+<li>Used in complex or handcrafted levels</li>
+</ul>
+
+<h4>Navigation Mesh (NavMesh)</h4>
+<ul>
+<li>Walkable surfaces merged into polygons</li>
+<li>Common in 3D games</li>
+<li>Very efficient for smooth movement</li>
+</ul>
+<p></p>
+<h3>The A* (A-Star) Algorithm</h3>
+<p>The most common pathfinding algorithm in games is <strong>A*.</strong></p>
+A* works by:
+<ul>
+<li>Exploring possible paths</li>
+<li>Scoring them based on:</li>
+<ul>
+<li>Distance already traveled</li>
+<li>Estimated distance to the goal</li>
+</ul>
+<li>Always choosing the most promising path</li>
+</ul>
+
+It’s popular because it is:
+<ul>
+<li>Fast</li>
+<li>Accurate</li>
+<li>Predictable</li>
+</ul>
+<p></p>
+<h3>Costs and Weights</h3>
+Not all paths are equal.
+<p></p>
+Games assign costs to areas:
+<ul>
+<li>Roads → low cost</li>
+<li>Mud → high cost</li>
+<li>Danger zones → very high cost</li>
+</ul>
+
+This allows AI to:
+<ul>
+<li>Prefer safer routes</li>
+<li>Avoid hazards</li>
+<li>Feel more intelligent</li>
+</ul>
+<p></p>
+<h3>Dynamic Obstacles</h3>
+In real games, the world changes:
+<ul>
+<li>Doors open and close</li>
+<li>Objects move</li>
+<li>Other characters block paths</li>
+</ul>
+Pathfinding systems handle this by:
+<ul>
+<li>Recalculating paths</li>
+<li>Using avoidance behaviors</li>
+<li>Falling back to simple steering</li>
+</ul>
+<p></p>
+<h3>Pathfinding vs Movement</h3>
+Pathfinding:
+<ul><li>Decides where to go</li></ul>
+
+Movement:
+<ul><li>Decides how to move there</li></ul>
+An AI may:
+<ul>
+<li>Compute a path once</li>
+<li>Follow it using physics or steering</li>
+<li>Recalculate if something changes</li>
+</ul>
+These systems work together but are separate.
+<p></p>
+<h3>Pathfinding in Game Engines</h3>
+<ul>
+<li><strong>Unity</strong> → NavMesh & NavMeshAgent</li>
+<li><strong>Unreal Engine</strong> → Navigation System</li>
+<li><strong>Godot</strong> → NavigationServer / NavigationRegion</li>
+</ul>
+
+Engines usually:
+<ul>
+<li>Generate navigation data</li>
+<li>Handle path queries</li>
+<li>Provide movement helpers</li>
+</ul>
+<p></p>
+<h3>Why Pathfinding Is Important</h3>
+Good pathfinding:
+<ul>
+<li>eeMakes AI feel smart</li>
+<li>Prevents frustrating bugs</li>
+<li>Supports complex levels</li>
+<li>Scales to many agents</li>
+</ul>
+Bad pathfinding instantly breaks immersion.
+
+</p>
+
+	</section>
+	
+	
+
+
+
+
+
+
+		<section class="text_blocks">
+        <h2>Enemy Behaviors</h2> 
+        
+        <p id="text_passage_one"> 
+    
+   <h3>What Are Enemy Behaviors?</h3>
+
+<p><strong>Enemy behaviors</strong> define <strong>how enemies act, react, and make decisions</strong> during gameplay.
+<br>
+They control:</p>
+<ul>
+<li>When an enemy attacks</li>
+<li>How it moves</li>
+<li>How it reacts to the player</li>
+<li>When it retreats or changes strategy</li>
+</ul>
+Good behaviors make enemies:
+<ul>
+<li>Predictable enough to learn</li>
+<li>Unpredictable enough to stay interesting</li>
+</ul>
+<p></p>
+<h3>Core Behavior States</h3>
+<p>Most enemy AI is built around states.
+<br>
+Common states include:</p>
+<ul>
+<li><strong>Idle</strong> – standing still, patrolling</li>
+<li><strong>Patrol</strong> – moving along a path</li>
+<li><strong>Alert</strong> – something suspicious happened</li>
+<li><strong>Chase</strong> – player detected</li>
+<li><strong>Attack</strong> – engaging the player</li>
+<li><strong>Search</strong> – player lost</li>
+<li><strong>Retreat / Flee</strong> – low health or danger</li>
+</ul>
+Enemies switch between states based on conditions.
+<p></p>
+<h3>Finite State Machines (FSM)</h3>
+
+<p>The most common structure for enemy behavior is the <strong>Finite State Machine</strong>. <br>
+How it works:</p>
+<ul>
+<li>Enemy is always in one state</li>
+<li>Conditions trigger transitions</li>
+<li>Each state has clear logic</li>
+</ul>
+
+Example:
+<ul>
+<li>If player seen → Patrol → Chase</li>
+<li>If player in range → Chase → Attack</li>
+<li>If player lost → Chase → Search</li>
+</ul>
+
+FSMs are:
+<ul>
+<li>Easy to understand</li>
+<li>Easy to debug</li>
+<li>Very common in games</li>
+</ul>
+<p></p>
+<h3>Perception: How Enemies “Sense” the Player</h3>
+<p>Enemies need ways to detect the player.
+Common senses:</p>
+<ul>
+<li><strong>Vision</strong> – cone or radius checks</li>
+<li><strong>Hearing</strong> – reacting to sounds</li>
+<li><strong>Proximity</strong> – distance-based triggers</li>
+<li><strong>Line of sight</strong> – raycasts</li>
+</ul>
+Perception determines when behaviors change.
+<p></p>
+<h3>Aggression and Difficulty</h3>
+Behavior often changes with:
+<ul>
+<li>Health</li>
+<li>Distance</li>
+<li>Player actions</li>
+<li>Difficulty level</li>
+</ul>
+Examples:
+<ul>
+<li>Low health → defensive behavior</li>
+<li>High difficulty → faster reactions</li>
+<li>Player hiding → search behavior</li>
+</ul>
+This creates dynamic encounters.
+<p></p>
+<h3>Group and Coordinated Behaviors</h3>
+<p>Enemies don’t always act alone. <br>
+Group behaviors include:</p>
+<ul>
+<li>Calling for help</li>
+<li>Flanking the player</li>
+<li>Taking turns attacking</li>
+<li>Holding positions</li>
+</ul>
+Even simple coordination makes AI feel smarter.
+<p></p>
+<h3>Scripted vs Dynamic Behaviors</h3>
+
+<h4>Scripted Behaviors</h4>
+<ul>
+<li>Predefined actions</li>
+<li>Used for bosses or story moments</li>
+</ul>
+
+<h4>Dynamic Behaviors</h4>
+<ul>
+<li>React to the game state</li>
+<li>Used for regular enemies</li>
+</ul>
+Most games mix both.
+<p></p>
+<h3>Enemy Behaviors in Game Engines</h3>
+<ul>
+<li>Unity → State machines, Animator, scripts</li>
+<li>Unreal Engine → Behavior Trees, AI Controllers</li>
+<li>Godot → State scripts, signals</li>
+</ul>
+Engines provide tools, but:
+<ul>
+<li>Design decisions define the behavior quality</li>
+</ul>
+<p></p>
+<h3>Common Enemy AI Mistakes</h3>
+<ul>
+<li>Enemies react instantly (no delay)</li>
+<li>Perfect aim or tracking</li>
+<li>No cooldowns</li>
+<li>No readable patterns</li>
+</ul>
+Good enemy design includes:
+<ul>
+<li>Telegraphing attacks</li>
+<li>Reaction time</li>
+<li>Mistakes</li>
+</ul>
+
+<h3>Why Enemy Behaviors Matter</h3>
+Enemy behavior defines:
+<ul>
+<li>Challenge</li>
+<li>Pacing</li>
+<li>Fun factor</li>
+</ul>
+<p>
+Players may forgive simple graphics, <br>
+but bad enemy behavior is unforgettable (in a bad way).</p>
+	
+	
+	
+	
+	
+	
+		</p>
+
+	</section>
+	
+	
+
+
+	<section class="text_blocks">
+        <h2>Decision Trees</h2> 
+        
+        <p id="text_passage_one"> 
+    
+  <h3>What Is a Decision Tree?</h3>
+<p>A <strong>decision tree</strong> is a structured way for AI to <strong>choose what action to take</strong> based on conditions.
+<br>
+It works like asking questions:</p>
+<ul>
+<li>Can I see the player?</li>
+<li>Is the player in range?</li>
+<li>Is my health low?</li>
+</ul>
+Based on the answers, the AI picks an action.
+<p></p>
+<h3>How Decision Trees Work</h3>
+A decision tree is made of nodes.
+
+<h4>Decision Nodes</h4>
+<ul>
+<li>Ask a yes/no question</li>
+<li>Example: Is the player visible?</li>
+</ul>
+<h4>Action Nodes</h4>
+<ul>
+<li>Perform an action</li>
+<li>Example: Attack, Chase, Patrol</li>
+</ul>
+The AI starts at the top and:
+<ul>
+<li>Evaluates conditions</li>
+<li>Moves down the tree</li>
+<li>Stops at the first valid action</li>
+</ul>
+<p></p>
+<h3>Simple Example</h3>
+Logic flow:
+<ul>
+<li>If player is visible → If player is in range → Attack → Else → Chase</li>
+<li>Else → Patrol</li>
+This structure is easy to visualize and debug.
+</ul>
+<p></p>
+<h3>Decision Trees vs Finite State Machines</h3>
+Both are common AI tools, but they solve slightly different problems.
+
+<h4>Finite State Machines (FSM)</h4>
+<ul>
+<li>Enemy is in one state at a time</li>
+<li>Good for clearly separated behaviors</li>
+</ul>
+<h4>Decision Trees</h4>
+<ul>
+<li>Focus on choosing actions</li>
+<li>Better for layered conditions</li>
+<li>Easier to extend with new rules</li>
+</ul>
+<p>Many games <strong>combine both</strong>.</p>
+<p></p>
+<h3>Depth and Priority</h3>
+The order of decisions matters.
+<ul>
+<li>Higher branches = higher priority</li>
+<li>Emergency actions (low health, danger) are checked first</li>
+<li>Less important behaviors are checked later</li>
+</ul>
+This prevents strange behavior, like attacking while dying.
+<p></p>
+<h3>Advantages of Decision Trees</h3>
+<ul>
+<li>Easy to understand</li>
+<li>Predictable behavior</li>
+<li>Good control over priorities</li>
+<li>Visualizable (great for designers)</li>
+</ul>
+<p></p>
+<h3>Limitations</h3>
+<ul>
+<li>Trees can grow very large</li>
+<li>Hard to manage complex logic</li>
+<li>Changes may require restructuring</li>
+</ul>
+For large projects, this leads to:
+<ul>
+<li><strong>Behavior Trees</strong></li>
+<li><strong>Utility AI</strong></li>
+</ul>
+<p></p>
+<h3>Decision Trees in Practice</h3>
+Used for:
+<ul>
+<li>Simple enemies</li>
+<li>NPC reactions</li>
+<li>Companion AI</li>
+<li>Boss phase selection</li>
+</ul>
+They’re especially useful when behavior must be clear and readable to players.
+
+<h3>Decision Trees in Game Engines</h3>
+<ul>
+<li><strong>Unity</strong> → Custom scripts, visual tools</li>
+<li><strong>Unreal Engine</strong> → Behavior Trees (advanced form)</li>
+<li><strong>Godot</strong> → Script-based logic trees</li>
+</ul>
+Some engines offer visual editors; others rely on code.
+
+<h3>Why Decision Trees Matter</h3>
+Decision trees help AI:
+<ul>
+<li>Make logical choices</li>
+<li>React to player actions</li>
+<li>Stay understandable and controllable</li>
+</ul>
+They’re a major step from “scripted enemies” to responsive AI.
+</p>
+
+	</section>
+
+
+
+
+	<section class="text_blocks">
+        <h2>State Machines</h2> 
+        
+        <p id="text_passage_one"> 
+<h3>What Is a State Machine?</h3>
+
+<p>A <strong>State Machine</strong> describes behavior as a set of <strong>distinct states</strong>, where an entity can only be in <strong>one state at a time</strong>.
+
+Each state:</p>
+<ul>
+<li>Has a clear purpose</li>
+<li>Controls what the entity does</li>
+<li>Defines when it can switch to another state</li>
+</ul>
+
+Think of it as:
+<em>“What am I doing right now?”</em>
+<p></p>
+<h3>Common States in Games</h3>
+Typical states include:
+<ul>
+<li>Idle</li>
+<li>Move / Patrol</li>
+<li>Chase</li>
+<li>Attack</li>
+<li>Defend</li>
+<li>Stunned</li>
+<li>Dead</li>
+</ul>
+Only one of these is active at any moment.
+<p></p>
+<h3>State Transitions</h3>
+<p>A <strong>transition</strong> is a rule that moves the AI from one state to another.
+Examples:</p>
+<ul>
+<li>Player detected → Idle → Chase</li>
+<li>Player in range → Chase → Attack</li>
+<li>Health low → Attack → Retreat</li>
+<li>Health zero → Any → Dead</li>
+</ul>
+Transitions are usually triggered by:
+<ul>
+<li>Conditions</li>
+<li>Events</li>
+<li>Timers</li>
+</ul>
+<p></p>
+<h3>What Happens Inside a State</h3>
+Each state usually has:
+<ul>
+<li>Enter logic – what happens when the state starts</li>
+<li>Update logic – what happens every frame</li>
+<li>Exit logic – cleanup before leaving the state</li>
+</ul>
+This keeps behavior:
+<ul>
+<li>Organized</li>
+<li>Predictable</li>
+<li>Easy to debug</li>
+</ul>
+
+<h3>Finite State Machines (FSM)</h3>
+Most game state machines are finite, meaning:
+<ul>
+<li>A fixed number of states</li>
+<li>Clearly defined transitions</li>
+</ul>
+FSMs are:
+<ul>
+<li>Simple</li>
+<li>Reliable</li>
+<li>Widely used</li>
+</ul>
+They’re ideal for:
+<ul>
+<li>Enemies</li>
+<li>NPCs</li>
+<li>Game objects</li>
+<li>UI flow</li>
+<li>Player states (jumping, falling, attacking)</li>
+</ul>
+<p></p>
+<h3>State Machines Beyond AI</h3>
+<p>State machines aren’t just for enemies.
+<br>
+They’re used for:</p>
+<ul>
+<li>Player movement states</li>
+<li>Animation systems</li>
+<li>Game flow (menus, gameplay, pause)</li>
+<li>Boss phases</li>
+</ul>
+Once you understand them, you’ll see them everywhere.
+<p></p>
+<h3>State Machines vs Decision Trees</h3>
+<ul>
+<li><strong>State Machines</strong> → What am I doing right now?</li>
+<li><strong>Decision Trees</strong> → What should I do next?</li>
+</ul>
+Many games use:
+<ul>
+<li>Decision trees to <strong>choose a state</strong></li>
+<li>State machines to <strong>run the behavior</strong></li>
+</ul>
+This combination is powerful and clean.
+<p></p>
+<h3>Common Mistakes</h3>
+<ul>
+<li>Too many states</li>
+<li>States doing too much</li>
+<li>Transitions scattered everywhere</li>
+<li>Missing “fallback” states</li>
+</ul>
+Good state machines are:
+<ul>
+<li>Simple</li>
+<li>Focused</li>
+<li>Readable</li>
+</ul>
+
+<h3>Why State Machines Are a Perfect Final Topic</h3>
+State machines:
+<ul>
+<li>Tie together movement, AI, animation, and logic</li>
+<li>Teach clean structure</li>
+<li>Scale from simple enemies to complex systems</li>
+</ul>
+If you understand state machines, you’re ready to move from:
+<p>
+	“How does this work?”
+	<br>
+to
+<br>
+	“How should this feel?”
+</p>
+</p>
+
+	</section>
+    
+	
+	
+	</body>
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+</html>
