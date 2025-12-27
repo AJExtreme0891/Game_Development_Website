@@ -20,7 +20,7 @@ body {
 opacity: 0;
 visibility: hidden;
 position: fixed;
-top: 95%;
+top: 100%;
 width: 5%;
 height: 2.5%;
 border-radius: 8px;
@@ -34,6 +34,7 @@ transition: all 0.5s;
 #Back_To_Top.show {
   opacity: 1;
   visibility: visible; /* becomes visible instantly, then fades in via opacity */
+  top: 95%;
 }
 
 #Switch_Lang_Label{
@@ -637,6 +638,7 @@ transform: translateY(600%);
 	border-radius: 4%;
 }
 /*#endregion videos*/
+
 
 
 
