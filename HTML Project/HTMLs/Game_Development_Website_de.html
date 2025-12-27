@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<!-- This is the Head where the meta data is set and where the css file is linked -->
+	<head>
+		<title> Spieleentwicklung Erklärt </title>
+		<meta charset="uf-8">
+		<!--This apparently locks the width of the website when using a mobile device (i did this cuz i sometimes programm this on my tablet -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="icon" href="../Pictures/favicon.png" type="image/png">
+		<link rel="stylesheet" href="../Style_Sheets/Game_Development_Style_Sheet.css">
+	</head>
+	
+	
+		<body>
+<body>
+
+<!--Button to go back to the top-->
+<a href="#Placeholder">
+  <button id="Back_To_Top">Zurück nach oben</button>
+</a>
+
+<a href="Game_Development_Website.html" id="Switch_Lang_Link">
+ <img id="German_Flag" src="../Pictures/English_language.png" alt="Switch to German Icon">
+  <p id="Switch_Lang_Label">switch to English</p>
+</a>
+
+<!--invisible ELement meant to be a target for scrolling to the top quicker -->
+<div id="Placeholder"></div>
+
+
+
+
+		<header>
+		<!-- This is the blue box at the very top where the title is in-->
+		<div id="Head_Part"> <p id="title"> Spieleentwicklung</p></div>
+		
+		
+		
+<!-- This is the grey box under the Blue box where additional stuff is in-->
+		<div id="Second_Head"> 
+		<!--This is the table i used to display "menu" and "sources"-->
+	<table id="table_header"> 
+				<tr> <td class="menu_data" id="menu_button">
+					<p id= "Menu_bar"> Menu</p>
+					<!--In order to actually use the Menu button i made a pop-up menu where the links to the different pages are in -->
+					<div id="popup_menu">
+						<a href="Basics_de.html">Die Grundlagen</a>
+						<a href="Physics_de.html">Die Physik von Videospielen</a>
+						<a href="AI_de.html">Spiele KI & Logik</a>
+						<a href="Sources_de.html">Quellen</a>
+   				</div> 
+
+
+					</td> 
+				<td class="menu_data"> <a href="Sources_de.html">Quellen</a> </td> </tr>
+			</table>
+		</div>
+
+		
+
+		</header>		
+		
+		
+		
+		
+		
+		<!--From here starts the selection for which topic you want to learn about for this i used sections to dictate the space the entire section can use and an image as the background-->
+		<a href="Basics_de.html">
+		<section id="topic_one">
+		<img src="../Pictures/Basics.jpeg" alt="Image showing a Board with Back to Basics written on it">
+		<!--Here i used a div tag to make a box which contains the text and cover the image to create cool animation-->
+		<div class="text_panel"> 
+<h2>Die Grundlagen</h2>
+		
+		<table class="table_topics">
+    		<tr>
+        		<td class="topic_data">1. Spielschleife</td>
+        		<td class="topic_data">4. Eingabeverarbeitung</td>
+    		</tr>
+    		<tr>
+        		<td class="topic_data">2. Delta-Zeit</td>
+        		<td class="topic_data">5. Sprites / Modelle</td>
+    		</tr>
+    		<tr>
+      			<td class="topic_data">3. Koordinaten Systeme</td>
+      	 		<td class="topic_data">6. Grundlegende Logik</td>
+			</tr>
+		</table>	
+        
+		</div>
+				
+		</section>
+		</a>
+
+<!--Since the content is styled with classes each section looks the same just with different text and pictures so im wont explain them all-->
+<a href="Physics.html">
+		<section id="topic_two" class="topics">
+		<img id="game_physics_img" src="../Pictures/Game_Physics.png" alt="Image that is supposed to symbolize Game Phyics">	
+		<div class="text_panel">
+		<h2>Die Physik der Videospiele</h2>
+       
+		<table class="table_topics">
+    		<tr>
+        		<td class="topic_data">1. Starre Körper</td>
+        		<td class="topic_data">4. Licht/Schatten</td>
+    		</tr>
+    		<tr>
+        		<td class="topic_data">2. Collisionen</td>
+        		<td class="topic_data">5. Partikel systeme</td>
+    		</tr>
+    		<tr>
+      			<td class="topic_data">3. Schwerkraft & Krafte</td>
+      	
+			</tr>
+		</table>
+
+		</div>
+		
+		
+		
+		</section>
+		</a>
+		
+		<a href="AI.html">
+		<section id="topic_three" class="topics">
+		<img src="../Pictures/Path_Finding.png" alt="Image from Minecraft showing the path finding of Mobs">
+		<div class="text_panel">
+		<h2>Spiel-KI und Logik</h2>
+       
+		<table class="table_topics">
+    		<tr>
+        		<td class="topic_data">1. Pathfinding</td>
+        		<td class="topic_data">3. Entscheidungsbäume</td>
+    		</tr>
+    		<tr>
+        		<td class="topic_data">2. Verhalten der Gegner</td>
+        		<td class="topic_data">4. Zustandsmaschine</td>
+    		</tr>
+		</table>	
+		
+		
+		</div>
+		
+		
+		
+		</section>
+		</a>
+
+<!--I wanted some space at the bottom of the website for design purposes-->
+		<section id="free_space">
+
+		</section>
+		
+		
+		
+		
+		<script src="../Java_Scripts/Header.js"></script>
+		
+		</body>
+		
+
+		
+		
+		
+		
+</html>
