@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html>
+<!--Der gesamte Kopf- und Headerbereich ist identisch mit dem der Startseite.-->
+	<head>
+		<title> Die Grundlagen </title>
+		<meta charset="utf-8">
+    <link rel="icon" href="../Pictures/favicon.png" type="image/png">
+		<link rel="stylesheet" href="../Style_Sheets/Info_Pages_Style_Sheet.css">
+	</head>
+	<body>
+
+
+			<header>
+		
+		<div id="Head_Part"> <p id="title"> Die Grundlagen</p></div>
+		
+		
+		
+
+		<div id="Second_Head"> 
+			<table id="table_header"> 
+				<tr> <td class="menu_data" id="menu_button">
+					<p id= "Menu_bar"> Menu</p>
+						<div id="popup_menu">
+        					<a href="Game_Development_Website_de.html">Zurück zum Start</a>
+       						<a href="Physics_de.html">Die Physik von Videospielen</a>
+       						<a href="AI_de.html">Spiele KI & Logik</a>
+							<a href="Sources_de.html">Quellen</a>
+   						 </div> 
+					</td> 
+				<td class="menu_data"> <a href="Sources_de.html">Quellen</a> </td> </tr>
+			</table>
+		</div>
+		
+				
+		
+		</header>
+
+
+<a href="#Placeholder">
+  <button id="Back_To_Top">Hoch</button>
+</a>
+
+<a href="Basics.html" id="Switch_Lang_Link">
+ <img id="German_Flag" src="../Pictures/English_language.png" alt="Switch to German Icon">
+  <p id="Switch_Lang_Label">switch to English</p>
+</a>
+
+<div id="Placeholder"></div>
+
+
+<section class="text_blocks overview_section" id="text_block_one" >
+        <h2></h2> 
+        
+        <p id="text_passage_one"> 
+ <svg
+  viewBox="0 0 1000 600"
+  width="100%"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Hintergrundbild -->
+  <image
+    href="../Pictures/Game_Loop_Preview.png"
+    x="0"
+    y="0"
+    width="1000"
+    height="600"
+  />
+
+  <a href="#Coordinate_Systems">
+  <rect
+    x="150"
+    y="50"
+    width="200"
+    height="80"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+<a href="#Coordinate_Systems">
+  <rect
+    x="50"
+    y="100"
+    width="200"
+    height="160"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+
+
+
+<a href="#Input_Handling">
+  <rect
+    x="50"
+    y="300"
+    width="250"
+    height="270"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+<a href="#Input_Handling">
+  <rect
+    x="300"
+    y="450"
+    width="100"
+    height="100"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+
+
+
+	  <a href="#game_loop">
+  <rect
+    x="300"
+    y="140"
+    width="250"
+    height="240"
+    fill="rgba(0, 0, 255, 0)"
+/>
+	  <a href="#game_loop">
+  <rect
+    x="400"
+    y="175"
+    width="270"
+    height="290"
+    fill="rgba(0, 0, 255, 0)"
+/>
+	  <a href="#game_loop">
+  <rect
+    x="340"
+    y="375"
+    width="100"
+    height="70"
+    fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Delta_Time">
+  <rect
+	x="540"
+	y="125"
+	width="149"
+	height="38"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+	  <a href="#Delta_Time">
+  <rect
+	x="450"
+	y="40"
+	width="230"
+	height="95"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Basic_Logic">
+  <rect
+	x="700"
+	y="50"
+	width="230"
+	height="150"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Sprites_Models">
+  <rect
+	x="750"
+	y="250"
+	width="150"
+	height="100"
+	fill="rgba(0, 0, 255, 0)"
+/>
+	<a href="#Sprites_Models">
+  <rect
+	x="540"
+	y="470"
+	width="140"
+	height="70"
+	fill="rgba(0, 0, 255, 0)"
+/>
+<a href="#Sprites_Models">
+  <rect
+	x="730"
+	y="380"
+	width="160"
+	height="150"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+  <!-- Grid overlay -->
+   <!--
+<pattern
+  id="grid"
+  width="50"
+  height="50"
+  patternUnits="userSpaceOnUse"
+>
+  <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ccc" />
+</pattern>
+
+<rect
+  width="100%"
+  height="100%"
+  fill="url(#grid)"
+/>-->
+
+
+
+
+</svg>
+
+	
+		</p>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+	<!--Topic: Game loop-->
+	<!--As with the starting Page I used sections to divide the text passages -->
+	<section class="text_blocks basics_text_block_one" id="text_block_one">
+        <h2 id="game_loop">Die Spielschleife</h2> 
+       
+        <p class="text_passages"> 
+<h3>Was ist eine Spielschleife?</h3>
+Die Spielschleife ist die Kernstruktur eines Spiels. Sie ist ein sich wiederholender Zyklus, der das Spiel kontinuierlich aktualisiert und auf dem Bildschirm anzeigt. Solange das Spiel läuft, läuft die Spielschleife ununterbrochen.
+Ohne Spielschleife würde ein Spiel nicht auf Spielereingaben reagieren, Bewegungen aktualisieren oder Grafiken neu zeichnen.
+<p></p>
+<h3>Warum ist die Spielschleife wichtig?</h3>
+
+Der Spielablauf ist wichtig, weil er:
+<ul>
+<li>Sorgt für einen reibungslosen Spielablauf</li>
+<li>Verarbeitet Spielereingaben (Tastatur, Maus, Controller)</li>
+<li>Aktualisiert die Spiellogik (Bewegung, Physik, KI).</li>
+<li>Zeichnet das aktualisierte Spiel in jedem Frame auf den Bildschirm.</li>
+</ul>
+
+<p>Fast jedes Videospiel, egal wie einfach oder komplex, verwendet eine Art Spielablauf. <br>
+Was passiert innerhalb eines Spielablaufs?
+<br>
+Ein grundlegender Spielablauf folgt üblicherweise diesen Schritten:</p>
+<ul>
+<li>Handle Input</li>
+  <ul>
+    <li>Das Spiel überprüft die Aktionen des Spielers, wie z. B. das Drücken von Tasten oder das Bewegen eines Controllers.</li>
+  </ul>
+<li>Spielstatus aktualisieren</li>
+<ul>
+<li>Das Spiel aktualisiert alles basierend auf den Eingaben und der Zeit:</li>
+
+<ul>
+<li>Spielerbewegung</li>
+<li>Feindliches Verhalten</li>
+<li>Physik und Kollisionen</li>
+<li>Punktestand und Spielregeln</li>
+<li>Rendere (Zeichne) das Spiel</li>
+<ul>
+<li>Das Spiel aktualisiert den Bildschirm mit den angepassten Positionen, Animationen und Grafiken.</li>
+</ul>
+</ul></ul>
+</ul>Diese Schleife wiederholt sich viele Male pro Sekunde, oft 60 Mal pro Sekunde (60 FPS).
+
+<p></p>
+<h3>Arten von Spielschleifen</h3>
+Es gibt verschiedene Möglichkeiten, einen Spielablauf zu strukturieren, abhängig vom Spiel und der Plattform.
+ <h4>Feste Zeitschrittschleife</h4>
+<p>Das Spiel wird mit einer festen Rate aktualisiert (z. B. 60 Aktualisierungen pro Sekunde), unabhängig von der Rechenleistung des Computers. <br> 
+Dadurch werden Physik und Bewegungen konsistenter, die Implementierung kann jedoch schwieriger sein.</p>
+
+<h4>Variable Zeitschrittschleife</h4>
+<p>Das Spiel wird basierend auf der seit dem letzten Frame verstrichenen Zeit aktualisiert. <br>
+Dies ist einfacher umzusetzen, aber Bewegung und Physik können sich inkonsistent anfühlen, wenn sich die Bildwiederholrate zu stark ändert.</p>
+
+
+Viele moderne Spiele verwenden einen Hybridansatz, der beide Methoden kombiniert, um ein flüssigeres Spielerlebnis zu ermöglichen.
+<p>Beispiel einer einfachen Spielschleife (Pseudocode)</p>
+Hier ist ein sehr einfaches Beispiel dafür, wie eine Spielschleife aussehen könnte:
+
+<!--I wanted to display a gameloop so i made a box and coloured it accordingly-->
+<div class="code-panel"><code><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span><span class="variable">gameRunning</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line">    <span class="method">processInput</span><span class="punctuation">();</span></span><span class="line">    <span class="method">update</span><span class="punctuation">();</span></span><span class="line">    <span class="method">render</span><span class="punctuation">();</span></span><span class="line"><span class="brace">}</span></span></code></div>
+<p>Diese Schleife läuft so lange, bis der Spieler das Spiel verlässt oder das Spiel endet.</p>
+
+<p></p>
+<h3>Bildrate und Leistung</h3>
+Die Bildrate (FPS – Bilder pro Sekunde) bestimmt, wie flüssig sich ein Spiel anfühlt.
+<ul>
+<li>30 FPS – Spielbar, aber weniger flüssig</li>
+<li>60 FPS – Flüssiger und gängiger Standard</li>
+<li>120 FPS+ – Sehr flüssig, wird in Hochleistungsspielen verwendet</li>
+</ul>
+Eine gut konzipierte Spielschleife trägt dazu bei, die Bildrate stabil zu halten und Verzögerungen oder Ruckler zu vermeiden.
+<p></p>
+<h3>Häufige Probleme mit Spielschleifen</h3>
+Zu den häufigen Problemen, mit denen Entwickler konfrontiert sind, gehören:
+<ul>
+<li>Verzögerungen oder Ruckler aufgrund rechenintensiver Prozesse in der Schleife</li>
+<li>Instabile Physik aufgrund inkonsistenter Zeitschritte</li>
+<li>Eingabeverzögerung, falls die Eingabe nicht korrekt verarbeitet wird</li>
+</ul>
+<h3>Abschluss</h3>
+<p>Die Spielschleife ist das Herzstück jedes Videospiels. Sie steuert, wie das Spiel auf Spielereingaben reagiert, die Spielwelt aktualisiert und alles auf dem Bildschirm anzeigt. Zu verstehen, wie die Spielschleife funktioniert, ist ein entscheidender erster Schritt für jeden, der sich für Spieleentwicklung interessiert. <br>
+Sobald man den Spielablauf verstanden hat, kann man sich fortgeschritteneren Themen wie Physik-Engines, Animationssystemen und Spieloptimierung zuwenden.
+</p>
+</p>
+
+		
+	</section>
+	
+	<!--Topic: Delta Time-->
+		<section class="text_blocks">
+        <h2 id="Delta_Time">Delta-Zeit</h2> 
+        
+        <p class="text_passages"> 
+    
+<h3>Was ist Delta-Zeit?</h3>
+<p>
+Die Delta-Zeit (Δt) ist die Zeitspanne, die zwischen zwei Einzelbildern vergangen ist. <br>
+In Spielen wird die Delta-Zeit verwendet, um sicherzustellen, dass sich Bewegungen, Animationen und Physik auch bei Änderungen der Bildrate konsistent verhalten.
+</p>
+<p>Anstatt zu fragen</p>
+„Wie viele Bilder sind vergangen?“
+
+<p>wir fragen</p>
+„Wie viel Zeit ist vergangen?“
+
+<p></p>
+<h3>Warum ist die Delta-Zeit wichtig?</h3>
+Ohne Delta-Zeit:
+<ul>
+<li>Schnellere Computer → schnelleres Gameplay</li>
+<li>Langsamere Computer → langsameres Gameplay</li>
+</ul>
+
+Mit Delta-Zeit:
+<ul>
+<li>Das Spiel läuft auf allen Geräten mit der gleichen Geschwindigkeit.</li>
+<li>Die Bewegungen fühlen sich flüssig und fair an.</li>
+<li>Die Physik verhält sich vorhersehbarer</li>
+</ul>
+<p></p>
+<h3>Das Problem ohne Delta-Zeit</h3>
+Stellen Sie sich einen Spieler vor, der sich pro Frame um 5 Einheiten bewegt:
+<ul>
+	<li>Bei 30 FPS → 150 Einheiten pro Sekunde</li>
+	<li>Bei 60 FPS → 300 Einheiten pro Sekunde</li>
+</ul>
+Derselbe Code, aber völlig unterschiedliche Geschwindigkeit
+
+<p></p>
+<h3>Die Lösung: Delta-Zeit</h3><p>
+Statt uns pro Frame zu bewegen, bewegen wir uns pro Sekunde: <br>
+Position += Geschwindigkeit × deltaTime</p>
+
+Beispiel:
+<ul>
+<li>Geschwindigkeit = 200 Einheiten pro Sekunde</li>
+<li>Delta-Zeit = 0,016 Sekunden (≈ 60 FPS)</li>
+
+</ul>
+
+Dies gewährleistet:
+<ul>
+<li>Gleiche Bewegungsgeschwindigkeit</li>
+
+<li>Unabhängig von der Bildrate (was gut ist)</li>
+</ul>
+<p></p>
+
+<div class="code-panel"><code><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span><span class="variable">gameRunning</span><span class="punctuation">)</span><
+<span class="brace">{</span></span><span class="line">   <span class="method">processInput</span><span class="punctuation">();</span></span><span class="line">   <span class="method">update</span><span class="punctuation">(</span><span class="variable">deltaTime</span><span class="punctuation">);</span></span><span class="line">   <span class="method">render</span><span class="punctuation">();</span></span><span class="line"><span class="brace">}</span></span></code></div>
+
+<P>Der Aktualisierungsschritt ist nun zeitabhängig, nicht mehr framebasiert.</P>
+<p></p>
+<h3>Delta-Zeit und die Spielschleife</h3>
+Delta-Zeit passt direkt in die Spielschleife:
+<ol>
+<li>Zeit seit dem letzten Frame messen</li>
+<li>Prozesseingabe</li>
+<li>Die Spiellogik wird mithilfe der Delta-Zeit aktualisiert.</li>
+<li>Rendern Sie den Rahmen</li>
+</ol>
+Dadurch wird die Delta-Zeit zu einem Kernbestandteil des Spielablaufs und nicht zu einem zusätzlichen Feature.
+<p></p>
+<h3>Häufige Probleme mit der Delta-Zeit</h3>
+<ul>
+<li>Sehr große Zeitdifferenzen (Verzögerungsspitzen) können dazu führen, dass Objekte springen.</li>
+<li>Die Physik kann außer Kraft gesetzt werden, wenn die Delta-Zeit nicht begrenzt wird.</li>
+<li>Viele Spiele begrenzen die Delta-Zeit auf einen Maximalwert.</li>
+</ul>
+
+<p>Beispiel:</p>
+deltaTime = min(deltaTime, 0.05);
+
+<p></p>
+<h3>Abschluss</h3>
+Die Delta-Zeit gewährleistet Folgendes:
+<ul>
+<li>Spiele fühlen sich konsistent an</li>
+<li>Die Bewegung ist reibungslos</li>
+<li>Leistungsunterschiede haben keinen Einfluss auf das Gameplay.</li>
+</ul>
+
+Zusammen mit der Spielschleife ist die Delta-Zeit eine der wichtigsten Grundlagen der Spieleprogrammierung.
+
+
+</p>
+
+	</section>
+		
+	<!--Coordinate Systems-->
+<section class="text_blocks">
+    <h2 id="Coordinate_Systems">Koordinatensysteme</h2> 
+        <p class="text_passages"> 
+<h3>Was ist ein Koordinatensystem?</h3>
+Ein Koordinatensystem ist eine Möglichkeit, mithilfe von Zahlen zu beschreiben, wo sich etwas befindet.
+<p></p>
+In Spielen werden Koordinatensysteme verwendet, um Folgendes zu definieren:
+<ul>
+<li>Spielerposition</li>
+<li>Feindliche Position</li>
+<li>Kameraposition</li>
+<li>Platzierung von UI-Elementen</li>
+</ul>
+Wenn ein Spiel die Koordinaten eines Objekts kennt, weiß es genau, wo es sich befindet.
+
+<h3>Das Koordinatensystem, das den meisten bereits bekannt ist (2D-Grafik)</h3>
+Ja, es ist im Grunde dasselbe wie in der Mathematik.
+
+<h4>2D-Koordinatensystem:</h4>
+
+<ul>
+<li>X-Achse → links ↔ rechts</li>
+<li>Y-Achse → nach oben ↔ nach unten</li>
+</ul>
+
+Beispiel:
+<p></p>
+(x, y) = (3, 2)
+<p></p>
+
+Das heißt:
+<ul>
+<li>3 Einheiten nach rechts</li>
+<li>2 Einheiten höher</li>
+</ul>
+Das ist perfekt für 2D-Spiele (Jump'n'Runs, Top-Down-Spiele).
+<p></p>
+<h3>Wichtiger Unterschied: Bildschirmkoordinaten vs. mathematische Koordinaten</h3>
+
+<h4>Mathematisches Koordinatensystem:</h4>
+<ul>
+<li>(0,0) liegt im Zentrum</li>
+<li>Y steigt nach oben</li>
+</ul>
+<!--Math Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="-5 -5 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="-5" y1="1" x2="6" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="6.6" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="6"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="6.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="-5" y1="-4" x2="6" y2="-4" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-3" x2="6" y2="-3" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-2" x2="6" y2="-2" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-1" x2="6" y2="-1" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="0" x2="6" y2="0" stroke="#ccc" stroke-width="0.03"/>
+
+
+
+<line x1="-5" y1="2" x2="6" y2="2" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="3" x2="6" y2="3" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="4" x2="6" y2="4" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="5" x2="6" y2="5" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="6" x2="6" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="7" x2="6" y2="7" stroke="#ccc" stroke-width="0.03"/>
+
+</g>
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="-4" y1="-5" x2="-4" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-3" y1="-5" x2="-3" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-2" y1="-5" x2="-2" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-1" y1="-5" x2="-1" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="0" y1="-5" x2="0" y2="6" stroke="#ccc" stroke-width="0.03"/>
+
+
+
+<line x1="2" y1="-5" x2="2" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="3" y1="-5" x2="3" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="4" y1="-5" x2="4" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="5" y1="-5" x2="5" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="6" y1="-5" x2="6" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="7" y1="-5" x2="7" y2="6" stroke="#ccc" stroke-width="0.03"/>
+
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="-4.2" y="0.8" font-size="0.3">-5</text>
+<text x="-3.2" y="0.8" font-size="0.3">-4</text>
+<text x="-2.2" y="0.8" font-size="0.3">-3</text>
+<text x="-1.2" y="0.8" font-size="0.3">-2</text>
+<text x="-0.2" y="0.8" font-size="0.3">-1</text>
+
+
+<text x="1.9" y="0.8" font-size="0.3">1</text>
+<text x="2.9" y="0.8" font-size="0.3">2</text>
+<text x="3.9" y="0.8" font-size="0.3">3</text>
+<text x="4.9" y="0.8" font-size="0.3">4</text>
+<text x="5.9" y="0.8" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.6" y="-4" font-size="0.3">5</text>
+<text x="0.6" y="-3" font-size="0.3">4</text>
+<text x="0.6" y="-2" font-size="0.3">3</text>
+<text x="0.6" y="-1" font-size="0.3">2</text>
+<text x="0.6" y="0" font-size="0.3">1</text>
+
+
+<text x="0.5" y="2.1" font-size="0.3">-1</text>
+<text x="0.5" y="3.1" font-size="0.3">-2</text>
+<text x="0.5" y="4.1" font-size="0.3">-3</text>
+<text x="0.5" y="5.1" font-size="0.3">-4</text>
+<text x="0.5" y="6.1" font-size="0.3">-5</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="3.2" y="4.2" font-size="0.3">(3,2)</text>
+</g>
+<g class="point_group">
+  <circle cx="-2" cy="1" r="0.15" fill="blue"/>
+  <text class="graph_label"x="-1.8" y="1." font-size="0.3">(-2,1)</text>
+</g>
+
+</svg>
+
+
+
+<h4>Bildschirm-/Spielkoordinatensystem:</h4>
+
+<ul>
+<li>(0,0) befindet sich sonst oben links</li>
+<li>Y steigt nach unten</li>
+</ul>
+
+
+
+
+<!--Screen Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="3.2" y="4.2" font-size="0.3">(3,2)</text>
+</g>
+
+
+
+
+</svg>
+
+
+
+<p id="text_part_move_up">Dies erklärt, warum „hoch“ in Spielen manchmal bedeutet, Y abzuziehen.</p>
+
+<h3>Koordinaten in Spielen (Praktisches Beispiel)</h3>
+Stellen Sie sich einen Spieler vor bei:
+<p></p>
+playerPosition = (100, 250)
+<ul>
+<li>X = 100 → 100 Pixel von links</li>
+<li>Y = 250 → 250 Pixel von oben</li>
+</ul>
+<p>Spieler nach rechts bewegen:</p>
+x += 5
+
+
+<p>Spieler nach oben bewegen:</p>
+y -= 5
+<p></p>
+Ja, nach oben ist negatives Y. Das ist in Spielen normal.
+
+<h3>3D-Koordinatensysteme</h3>
+3D-Spiele fügen eine dritte Achse hinzu:
+<ul>
+<li>X → links / rechts</li>
+<li>Y → nach oben / nach unten</li>
+<li>Z → vorwärts / rückwärts (Tiefe)</li>
+</ul>
+(x, y, z)
+
+<!--3d Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- Y-axis (Abscissa) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">y</text>
+  
+
+  <!-- Z-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">z</text>
+
+  <!-- X-axis (Applicate) -->
+  <line x1="1" y1="1" x2="11" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" /> 
+<text x="11.3" y="11.4" font-size="0.5">x</text>
+
+ 
+  
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="3.9" y="0.9" font-size="0.3">2</text>
+<text x="5.9" y="0.9" font-size="0.3">3</text>
+<text x="7.9" y="0.9" font-size="0.3">4</text>
+<text x="9.9" y="0.9" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="4.1" font-size="0.3">2</text>
+<text x="0.7" y="6.1" font-size="0.3">3</text>
+<text x="0.7" y="8.1" font-size="0.3">4</text>
+<text x="0.7" y="10.1" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Applicate-->
+<g id="Notation Applicate">
+<text x="2.2" y="2" font-size="0.3">1</text>
+<text x="3.2" y="3" font-size="0.3">2</text>
+<text x="4.2" y="4" font-size="0.3">3</text>
+<text x="5.2" y="5" font-size="0.3">4</text>
+<text x="6.2" y="6" font-size="0.3">5</text>
+<text x="7.2" y="7" font-size="0.3">6</text>
+<text x="8.2" y="8" font-size="0.3">7</text>
+<text x="9.2" y="9" font-size="0.3">8</text>
+<text x="10.2" y="10" font-size="0.3">9</text>
+
+
+</g>
+  <!-- Points -->
+   <g id="Points">
+
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="2" y="3.8" font-size="0.3">(2.5,1.5,2)</text>
+</g>
+
+<g class="point_group">
+  <circle id="black_point"cx="2" cy="8" r="0.15" fill="black"/>
+<text class="graph_label"x="1.3" y="8.6" font-size="0.3">(4,1,4)</text>
+</g>
+
+
+
+
+</g>
+
+<!--3d Box-->
+<g id="3d Box">
+<line x1="2" y1="8" x2="2" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="4" y1="8" x2="4" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="2" y1="6" x2="4" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="2" y1="8" x2="4" y2="8" stroke="black" stroke-width="0.04"/>
+
+<line x1="2" y1="6" x2="3" y2="7" stroke="gray" stroke-width="0.04"/>
+<line x1="3" y1="7" x2="5" y2="7" stroke="gray" stroke-width="0.04"/>
+<line x1="3" y1="7" x2="3" y2="9" stroke="gray" stroke-width="0.04"/>
+
+<line x1="4" y1="6" x2="5" y2="7" stroke="black" stroke-width="0.04"/>
+<line x1="4" y1="8" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+<line x1="5" y1="7" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+
+
+<line x1="2" y1="8" x2="3" y2="9" stroke="black" stroke-width="0.04"/>
+<line x1="3" y1="9" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+
+</g>
+
+</svg>
+
+
+<div id="text_part_2_move_up">
+Verwendet in:
+<ul>
+<li>FPS-Spiele</li>
+<li>Open-world games</li>
+<li>3D-Simulationen</li>
+</ul>
+</div>
+
+<h3 id="H2_move_up">Koordinatensysteme und die Spielschleife</h3>
+Die Koordinaten werden in jedem Frame innerhalb der Spielschleife aktualisiert.
+
+<p>Beispiel:</p>
+
+Position += Geschwindigkeit × DeltaZeit
+<p></p>
+
+Das verbindet:
+
+<ul>
+  <li>Spielschleife</li>
+
+<li>Delta-Zeit</li>
+
+<li>Koordinatensysteme</li>
+</ul>
+
+<h3>Häufige Fehler</h3>
+<ul>
+  <li>Vermischung von Weltkoordinaten und Bildschirmkoordinaten</li>
+  <li>Vergessen, dass Y nach unten zeigt.</li>
+  <li>Objekte werden pro Frame statt pro Sekunde bewegt.</li>
+</ul>
+
+<h3>Abschluss</h3>
+Koordinatensysteme ermöglichen es Spielen:
+
+<ul>
+  <li>Objekte präzise platzieren</li>
+  <li>Bewegen Sie sie reibungslos</li>
+  <li>Kollisionen erkennen</li>
+  <li>Kameras und Benutzeroberfläche steuern</li>
+</ul>
+Ohne Koordinatensysteme könnten Spiele nicht existieren.
+   		</p>
+
+	</section>
+
+
+
+
+
+
+<!--Topic: Input handling-->
+<section class="text_blocks">
+
+  <h2 id="Input_Handling">Eingabeverarbeitung</h2><p class="text_passages">Die Eingabeverarbeitung beschreibt, wie ein Spiel Spielereingaben (Tastatur, Maus, Controller) empfängt und in Aktionen innerhalb der Spielwelt umsetzt. Beispiele für Spielereingaben sind das Drücken von „W“ zum Vorwärtsbewegen, der Leertaste zum Springen oder ein Mausklick zum Angreifen.
+  <h3>Grundgedanke</h3>
+Auf den ersten Blick mag die Eingabeverarbeitung wie eine einfache Reihe von Wenn-Dann-Anweisungen erscheinen: Probieren Sie es selbst aus und drücken Sie W, A, S, D, um den roten Punkt zu bewegen.
+ 
+
+<div class="code-panel_if_w"><code><span class="line_w"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "w"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_w">
+   <span class="method">moveUp</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_s"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "s"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_s">
+   <span class="method">moveDown</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_d"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "d"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_d">
+   <span class="method">moveRight</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_a"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "a"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_a">
+   <span class="method">moveLeft</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+
+<svg class="coord_graph" id="Moving_Graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point_to_move"cx="3" cy="4" r="0.15" fill="red"/>
+<text id="point_location"x="10" y="11" font-size="0.3">(2.00, 3.00)</text>
+</g>
+
+
+
+
+</svg>
+
+
+<details  id="code_example_summary">
+  <summary>See the pseudocode example for how not to do it</summary>
+<div class="code-panel_eg"><code>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move"</span>);</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">step</span> = <span class="number">0.2</span>;</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">x</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cx"</span>));</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">y</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cy"</span>));</span>
+
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keydown"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="comment">//  naive if-statement movement</span></span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"w"</span>) {</span>
+<span class="line_eg">        <span class="variable">y</span> -= <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"s"</span>) {</span>
+<span class="line_eg">        <span class="variable">y</span> += <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"a"</span>) {</span>
+<span class="line_eg">        <span class="variable">x</span> -= <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"d"</span>) {</span>
+<span class="line_eg">        <span class="variable">x</span> += <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+
+<span class="line_eg">    <span class="comment">//  only updates position on first key press, no hold or multiple keys</span></span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cx"</span>, <span class="variable">x</span>);</span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cy"</span>, <span class="variable">y</span>);</span>
+<span class="line_eg">});</span>
+
+</code></div>
+</details>
+
+</p>
+
+<pre id="Pseudocode_problems_to_move_up"><p>
+Während dies bei sehr kleinen Programmen funktioniert, wird es bei realen Spielen schnell unpraktisch.
+Spiele benötigen flüssige Bewegungsabläufe, die gleichzeitige Bedienung mehrerer Tasten, die Möglichkeit zur Tastenbelegung, eine Pausenfunktion und die Unterstützung verschiedener Eingabegeräte.
+
+<h3>Probleme, die Sie im obigen Code erkennen können:</h3>
+- Das Gedrückthalten einer Taste setzt die Bewegung nicht fort.
+- Mehrere gleichzeitig gedrückte Tasten werden nicht korrekt verarbeitet.
+- Die Eingabe ist direkt an die Bewegung gekoppelt, was es schwierig macht, das Verhalten abhängig vom Spielzustand zu ändern.
+- Es gibt keine Unterstützung für verschiedene Eingabegeräte (Controller, Maus).
+- Funktionen wie Pausieren oder Deaktivieren der Eingabe sind schwer zu implementieren.
+- Die Bewegungsgeschwindigkeit ist nicht unabhängig von der Bildrate.
+- Es gibt keine Trennung zwischen Eingabeerkennung und Spiellogik.
+- Komplexe Eingabeschemata oder Kombos sind schwer zu verwalten.
+- Nicht skalierbar für größere Spiele mit mehr Aktionen.
+- Es fehlt an Flexibilität für zukünftige Änderungen oder Erweiterungen.
+- Die Delta-Zeit wird bei der Bewegungsberechnung nicht berücksichtigt.
+- Der Kontext wird ignoriert (z. B. kann sich der Spieler in einem Menü nicht bewegen).
+- Es gibt keine einfache Möglichkeit, Tastenbelegungen oder anpassbare Steuerelemente zu implementieren.
+- Und wahrscheinlich noch viele weitere Probleme.
+</p></pre>
+  
+
+<h3>Wie die Eingabeverarbeitung in der Praxis funktioniert</h3>
+Moderne Spiele unterteilen die Eingabeverarbeitung üblicherweise in drei logische Ebenen:
+
+  <ol>
+    <li><b>Rohdateneingabe</b> – Erkennung der gedrückten Taste oder des gedrückten Knopfes</li>
+    <li><b>Eingangsstatus</b> – Speichert, welche Eingänge aktuell aktiv sind</li>
+    <li><b>Spielaktionen</b> – Verwendung der Eingaben zur Steuerung des Spiels</li>
+  </ol>
+
+  <h4>1. Rohdaten</h4>
+Die Rohdateneingabe erfolgt durch das System oder den Browser. In dieser Phase
+erkennt das Spiel lediglich, dass eine Taste gedrückt oder losgelassen wurde.
+Hier finden keine Bewegungen oder Aktionen statt.
+ 
+<p></p>
+  <h4>2. Input State</h4>
+ Anstatt sofort zu reagieren, speichert das Spiel den aktuellen
+Eingabezustand. Dadurch weiß das Spiel, welche Tasten
+gerade gedrückt werden.
+  <p></p>
+<div class="code-panel_eg"><pre><code><span class="line_eg"><span class="variable">keys</span>[<span class="string">"w"</span>] = <span class="keyword">true</span>;   <span class="comment">// key is pressed</span></span>
+<span class="line_eg"><span class="variable">keys</span>[<span class="string">"w"</span>] = <span class="keyword">false</span>;  <span class="comment">// key is released</span></span></code></pre></div>
+  <p></p>
+<p>
+   Dadurch ist es möglich, mehrere Eingaben gleichzeitig zu verarbeiten,
+z. B. diagonale Bewegungen oder Sprinten während der Bewegung.
+  </p>
+
+  <h4>3. Spielaktionen</h4>
+
+  <p>
+Der Eingabezustand wird in jedem Frame der Spielschleife überprüft.
+Das Spiel entscheidet dann, welche Aktionen ausgeführt werden sollen.
+  </p>
+  <p></p>
+<div class="code-panel_eg"><pre><code><span class="line_eg"><span class="keyword">if</span> (<span class="variable">keys</span>[<span class="string">"w"</span>]) <span class="brace">{</span></span>
+<span class="line_eg">  <span class="variable">player</span>.<span class="method">moveForward</span>();</span>
+<span class="line_eg"><span class="brace">}</span></span></code></pre></div>
+<p></p>  
+<p>
+Ob eine Aktion erlaubt ist, hängt vom Spielzustand ab.
+Beispielsweise kann sich der Spieler möglicherweise nicht bewegen, während das Spiel pausiert ist oder eine Animation abgespielt wird.
+  </p>
+
+  <h3>Warum dieser Ansatz wichtig ist</h3>
+  <ul>
+ <li>Flüssige und gleichmäßige Bewegungen</li>
+<li>Mehrere Tasten können gleichzeitig verwendet werden</li>
+<li>Eingabe einfach deaktivieren (Pausenmenüs)</li>
+<li>Unterstützt Tastenbelegung und Controller</li>
+<li>Funktioniert korrekt mit Delta-Zeit und der Spielschleife</li>
+  </ul>
+
+  <h3>Zusammenfassung</h3>
+
+  <p>
+Eingabeverarbeitung beschränkt sich nicht nur auf die Reaktion auf einen Tastendruck.
+Stattdessen zeichnen Spiele die Eingaben des Spielers auf, verfolgen deren aktuellen Zustand
+und verarbeiten sie in jedem Frame, um reaktionsschnelle und flexible
+Steuerungen zu ermöglichen.
+  </p>
+
+<svg class="coord_graph_last_eg" id="Moving_Graph_right"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+<g class="point_group">
+  <circle id="red_point_to_move_correct"cx="3" cy="4" r="0.15" fill="red"/>
+<text id="point_location_of_correct_eg"x="10" y="11" font-size="0.3">(2.00, 3.00)</text>
+</g>
+
+
+
+
+</svg>
+<details  id="code_example_summary">
+  <summary>See the code used above for how to do it</summary>
+<div class="code-panel_eg"><code>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move_correct"</span>);</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">pointLocation</span> = <span class="method">document.getElementById</span>(<span class="string">"point_location_of_correct_eg"</span>);</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">x</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cx"</span>));</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">y</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cy"</span>));</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">step</span> = <span class="number">0.1</span>;</span>
+
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">keysPressed</span> = {};</span>
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keydown"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="variable">keysPressed</span>[<span class="variable">event.key</span>] = <span class="keyword">true</span>;</span>
+<span class="line_eg">});</span>
+
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keyup"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="variable">keysPressed</span>[<span class="variable">event.key</span>] = <span class="keyword">false</span>;</span>
+<span class="line_eg">});</span>
+
+<span class="line_eg"><span class="keyword">function</span> <span class="method">gameLoop</span>() {</span>
+<span class="line_eg">    <span class="method">updateMovement</span>();</span>
+<span class="line_eg">    <span class="method">requestAnimationFrame</span>(<span class="method">gameLoop</span>);</span>
+<span class="line_eg">}</span>
+
+<span class="line_eg"><span class="method">requestAnimationFrame</span>(<span class="method">gameLoop</span>);</span>
+
+<span class="line_eg"><span class="keyword">function</span> <span class="method">updateMovement</span>() {</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"w"</span>]) y -= step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"s"</span>]) y += step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"a"</span>]) x -= step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"d"</span>]) x += step;</span>
+
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cx"</span>, x);</span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cy"</span>, y);</span>
+
+<span class="line_eg">    <span class="variable">pointLocation</span>.<span class="property">textContent</span> = "(" + (x - 1).<span class="method">toFixed</span>(<span class="number">2</span>) + ", " + (y - 1).<span class="method">toFixed</span>(<span class="number">2</span>) + ")";</span>
+<span class="line_eg">}</span>
+</code></div>
+</details>
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<section class="text_blocks">
+        <h2 id="Sprites_Models">Grundlagen zu Sprites / Modellen</h2> 
+        
+<p class="text_passages"> 
+   
+  
+<h3>1. Was sind Sprites und Modelle?</h3>
+
+<h4>Sprites</h4><ul>
+<li>2D-Grafiken oder -Bilder, die in Spielen oder Anwendungen verwendet werden.</li>
+<li>Sie werden typischerweise für Charaktere, Objekte oder UI-Elemente verwendet.</li>
+<li>Sie können statisch (Einzelbild) oder animiert (Bildsequenz) sein.</li>
+<li>Beispiel: Die Spielfigur in alten Mario-Spielen.</li>
+</ul>
+<h4>Modelle</h4>
+
+<ul>
+<li>3D-Darstellungen von Objekten, Charakteren oder Umgebungen.</li>
+<li>Definiert durch Eckpunkte, Kanten und Flächen im dreidimensionalen Raum.</li>
+<li>Kann statisch oder animiert sein (z. B. Laufanimation).</li>
+<li>Beispiel: 3D-Charaktere in Minecraft oder Fortnite.</li>
+</ul>
+Visuelle Idee: Zeigen Sie einen direkten Vergleich zwischen einem 2D-Sprite und einem 3D-Modell derselben Figur.
+<p></p>
+<div id="picture_container">
+<img id="Mario_2d_Sprite" src="../Pictures/2d_Mario.png" alt="2d Mario Sprite" >
+<img id="Mario_3d_Model" src="../Pictures/3d_Mario.png" alt="3d Mario Model">
+</div>
+
+
+
+
+<p></p>
+<h3>2. Wie sie verwendet werden</h3>
+
+<div id="usage_sprite_picture_container">
+<h4>Sprites:</h4>
+<ul>
+<div id="usage_plattformer_picture_container">
+<li>Jump-’n’-Run-Spiele (Mario, Sonic)</li>
+<li>Top-Down-RPGs (Zelda, Pokémon)</li>
+<img id="Sonic_picture" src="../Pictures/platformer-games.png" alt="Picture of a platformer game(Sonic)">
+</div>
+<div id="usage_ui_picture_container">
+<li>UI-Symbole und Gesundheitsleisten</li>
+<li>Partikeleffekte (Explosionen, Rauch)</li>
+<img id="UI_picture" src="../Pictures/Game_UI's.png" alt="Picture of UI sprites">
+</div>
+</ul>
+</div>
+
+<div id="usage_model_picture_container">
+<h4>Modelle:</h4>
+<ul>
+
+<li>3D-Spiele (Ego-Shooter, Rollenspiele)</li>
+<li>VR/AR-Erlebnisse</li>
+<li>Simulationen und Animationen</li>
+<img id="FPS_picture" src="../Pictures/fortnite_gameplay.jpg" alt="Picture of a 3D FPS game">
+</ul>
+</div>
+
+
+<img src="../Pictures/Sprite_Model_comparison.png" alt="">
+
+<p></p>
+<h3>3. Grundlagen der Animation</h3>
+
+<h4>Sprites:</h4>
+<ul>
+<li>Framebasierte Animation (Sprite-Sheet)</li>
+<li>Flipbook-Stil → mehrere Bilder nacheinander</li>
+</ul>
+
+<h4>Models:</h4>
+<ul>
+<li>Rigging: Skelett innerhalb des Modells</li>
+<li>Skinning: Verbindung des Modells mit dem Skelett</li>
+<li>Animationen, die auf Knochen angewendet werden (gehen, rennen, springen)</li>
+</ul>
+
+<div id="animation_picture_container">
+  <video id="Walking_3d" src="../Videos/3D_Walking _Animation.mp4" loop controls autoplay muted></video>
+  <video id="Running_2d" src="../Videos/Running_Animation0001-0103.mkv" loop controls autoplay muted></video>
+</div>
+
+<p></p>
+<h3>4. Schlüsselkonzepte / Begriffe</h3>
+<ul>
+<li>Textur: Bild, das auf ein Modell oder einen Sprite angewendet wird.</li>
+<li>Frame: Ein einzelnes Bild in einer Sprite-Animation.</li>
+<li>Rigging / Skelett: Knochen im 3D-Modell für die Animation.</li>
+<li>Scheitelpunkt / Kante / Fläche: Bausteine ​​von 3D-Modellen.</li>
+<li>Hitbox: Unsichtbare Form, die für Kollisionen verwendet wird.</li>
+</ul>
+<p></p>
+<div id="key_concepts_picture_container">
+  <img id="Texture_example" src="../Pictures/Texture_eg.png" alt="Texture Example on 3D Model">
+  <img id="Frame_Rigging_example" src="../Pictures/Rigging, Frames_Edit.png" alt="Frame and Rigging Example on 2D Sprite">
+  <img id="Vertex_Edge_Face_example" src="../Pictures/Vertex, Edges, Faces_edit.png" alt="Vertex, Edge and Face Example on 3D Model">
+  <img id="Hitbox_example" src="../Pictures/HitBoxes_Image_edit.png" alt="Hitbox Example on 2D Sprite">
+
+</div>
+<p></p>
+<p></p>
+<h3>5. Werkzeuge und Formate</h3>
+
+<h4>Sprites:</h4>
+<ul>
+  <li>Werkzeuge: Photoshop, Aseprite, Piskel</li>
+  <li>Formate: PNG, GIF, SVG</li>
+</ul>
+<h4>Models:</h4>
+<ul>
+  <li>Tools: Blender, Maya, 3DS Max</li>
+  <li>Formate: OBJ, FBX, GLTF</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+	</section>
+
+<section class="text_blocks">
+        <h2 id="Basic_Logic">Grundlegende Logik</h2> 
+        
+<p class="text_passages"> Grundlegende Logik ist die Basis dafür, wie Spiele (und Programme im Allgemeinen) entscheiden, was als Nächstes passiert. Es geht um Bedingungen, Entscheidungen und Konsequenzen. Im Grunde genommen bringt man seinem Spiel damit bei, wie man denkt.
+
+
+
+<h3>Was ist Logik in Spielen?</h3>
+In Spielen beantwortet Logik Fragen wie:
+<ul>
+<li>Kann der Spieler jetzt springen?</li>
+<li>Hat der Feind den Spieler gesehen?</li>
+<li>Ist diese Tür verschlossen oder unverschlossen?</li>
+<li>Hat der Spieler gewonnen oder verloren?</li>
+</ul>
+Logik hat nichts mit Grafik oder Ton zu tun. Es geht um Regeln.
+
+
+<p></p>
+<h3>Bedingungen („Wenn dies, dann das“)</h3>
+<p>Das Herzstück der grundlegenden Logik sind Bedingungen.
+<br>
+Beispiele:</p>
+<ul></ul>
+<li>Wenn die Gesundheit des Spielers 0 beträgt → stirbt der Spieler</li>
+
+<li>Wenn der Schlüssel gefunden wird → kann die Tür geöffnet werden</li>
+
+<li>Wenn der Spieler die Sprungtaste drückt <strong>Und</strong> ist auf dem Boden → springen</li>
+</ul>
+Betrachten Sie die Bedingungen als Ja/Nein-Fragen, die Ihr Spiel ständig stellt.
+
+
+<p></p>
+<h3>Boolesche Logik (Wahr / Falsch)</h3>
+
+Most decisions rely on booleans, which can only be:
+<ul>
+<li><strong>WAHR</strong></li>
+<li><strong>FALSCH</strong></li>
+</ul>
+
+Beispiele:
+<ul>
+<li class="code_effect">isGrounded = true</li>
+<li class="code_effect">hasKey = false</li>
+<li class="code_effect">enemyAlerted = true</li>
+</ul>
+
+Diese Werte steuern, welche Aktionen zulässig sind.
+
+
+<p></p>
+<h3>Bedingungen kombinieren</h3>
+<p>
+Spiele überprüfen selten nur eine Sache.
+<br>
+Common logic combinations:</p>
+<ul>
+<li><strong>AND</strong> → Alle Bedingungen müssen erfüllt sein.</li>
+<li><strong>OR</strong> → Mindestens eine Bedingung muss erfüllt sein.</li>
+<li><strong>NOT</strong> → kehrt einen Zustand um</li>
+</ul>
+
+Beispiele in einfacher Sprache:
+<ul>
+<li>Der Spieler kann sprinten. <strong>if</strong> Ausdauer > 0 <strong>AND</strong> Die Sprint-Taste wird gedrückt gehalten</li>
+<li>Alarmauslöser <strong>if</strong> Spieler wird gesehen <strong>OR</strong> Kamera ist gehackt</li>
+<li>Tür öffnet sich <strong>if</strong> NICHT gesperrt</li>
+</ul>
+<p></p>
+<h3>Spielstatus</h3><p>
+Die Logik hängt oft vom aktuellen Spielstand ab.
+<br>
+Beispiele für Staaten:</p>
+<ul>
+<li>Menü</li>
+<li>Am Spielen</li>
+<li>Pausiert</li>
+<li>Spiel vorbei</li>
+</ul>
+
+Bestimmte Aktionen funktionieren nur in bestimmten Bundesstaaten:
+<ul>
+<li>Die Spielerbewegung funktioniert nur während des Spielens.</li>
+<li>Die Schaltflächen verhalten sich im Menü anders als im Pausenmenü.</li>
+</ul>
+Dadurch werden Fehler und unbeabsichtigtes Verhalten verhindert.
+
+<p></p>
+<h3>Ursache und Wirkung</h3>
+
+Gute Logik folgt klaren Ursache-Wirkungs-Regeln:
+<ul>
+<li>Spieleraktion → Logikprüfung → Ergebnis</li>
+</ul>
+
+Examples:
+<ul>
+<li>Spieler schießt → Munitionsvorrat sinkt → Gegner erleidet Schaden</li>
+<li>Timer erreicht Null → Logik löst aus → Runde beendet</li>
+</ul>
+
+Diese Vorhersagbarkeit sorgt dafür, dass sich Spiele fair anfühlen.
+
+
+<p></p>
+<h3>Warum grundlegende Logik wichtig ist</h3>
+
+Ohne solide Logik:
+<ul>
+<li>Die Bedienelemente reagieren nicht.</li>
+<li>Überall tauchen Bugs auf</li>
+<li>Systeme zerstören sich gegenseitig</li>
+</ul>
+
+Mit guter Logik:
+<ul></ul>
+<li>Das Gameplay fühlt sich flüssig an</li>
+<li>Die Regeln sind dem Spieler klar.</li>
+<li>Komplexe Systeme werden handhabbar</li>
+</ul>
+
+In Short:
+<p><strong>Logik ist das Entscheidungssystem eines Spiels.</strong>
+</p>
+Es steuert:
+<ul>
+<li>Was ist erlaubt</li>
+<li>Wenn etwas passiert</li>
+<li>Warum etwas passiert</li>
+</ul>
+
+Jedes hochentwickelte Spielsystem (KI, Physik-Interaktionen, Kampf, Benutzeroberfläche) basiert auf diesen einfachen logischen Regeln.
+
+
+
+
+</p>
+  </section>
+
+
+
+
+
+
+
+
+	<script src="../Java_Scripts/Basics_Page.js"></script>
+  <script src="../Java_Scripts/Header.js"></script>
+	</body>
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+</html>
