@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html>
+<!--The entire head and header part is identical to the starting page-->
+	<head>
+		<title> The Basics </title>
+		<meta charset="utf-8">
+    <link rel="icon" href="../Pictures/favicon.png" type="image/png">
+		<link rel="stylesheet" href="../Style_Sheets/Info_Pages_Style_Sheet.css">
+	</head>
+	<body>
+
+
+			<header id="Header_Wrapper">
+		
+		<div id="Head_Part"> <p id="title"> The Basics</p></div>
+		
+		
+		
+
+		<div id="Second_Head"> 
+			<table id="table_header"> 
+				<tr> <td class="menu_data" id="menu_button">
+					<p id= "Menu_bar"> Menu</p>
+						<div id="popup_menu">
+        					<a href="Game_Development_Website.html">Back to Start</a>
+       						<a href="Physics.html">The Phyics of Videogames</a>
+       						<a href="AI.html">Game AI & Logic</a>
+							<a href="Sources.html">Sources</a>
+   						 </div> 
+					</td> 
+				<td class="menu_data"> <a href="Sources.html">Sources</a> </td> </tr>
+			</table>
+		</div>
+		
+				
+		
+		</header>
+
+
+<a href="#Placeholder">
+  <button id="Back_To_Top">Back to Top</button>
+</a>
+
+<a href="Basics_de.html" id="Switch_Lang_Link">
+ <img id="German_Flag" src="../Pictures/Flag_of_Germany.png" alt="Switch to German Icon">
+  <p id="Switch_Lang_Label">wechsle zu Deutsch</p>
+</a>
+
+<div id="Placeholder"></div>
+
+
+<section class="text_blocks overview_section" id="text_block_one" >
+        <h2></h2> 
+        
+        <p id="text_passage_one"> 
+ <svg
+  viewBox="0 0 1000 600"
+  width="100%"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background image -->
+  <image
+    href="../Pictures/Game_Loop_Preview.png"
+    x="0"
+    y="0"
+    width="1000"
+    height="600"
+  />
+
+  <a href="#Coordinate_Systems">
+  <rect
+    x="150"
+    y="50"
+    width="200"
+    height="80"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+<a href="#Coordinate_Systems">
+  <rect
+    x="50"
+    y="100"
+    width="200"
+    height="160"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+
+
+
+<a href="#Input_Handling">
+  <rect
+    x="50"
+    y="300"
+    width="250"
+    height="270"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+<a href="#Input_Handling">
+  <rect
+    x="300"
+    y="450"
+    width="100"
+    height="100"
+    fill="rgba(0, 0, 255, 0)"
+	/>
+
+
+
+	  <a href="#game_loop">
+  <rect
+    x="300"
+    y="140"
+    width="250"
+    height="240"
+    fill="rgba(0, 0, 255, 0)"
+/>
+	  <a href="#game_loop">
+  <rect
+    x="400"
+    y="175"
+    width="270"
+    height="290"
+    fill="rgba(0, 0, 255, 0)"
+/>
+	  <a href="#game_loop">
+  <rect
+    x="340"
+    y="375"
+    width="100"
+    height="70"
+    fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Delta_Time">
+  <rect
+	x="540"
+	y="125"
+	width="149"
+	height="38"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+	  <a href="#Delta_Time">
+  <rect
+	x="450"
+	y="40"
+	width="230"
+	height="95"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Basic_Logic">
+  <rect
+	x="700"
+	y="50"
+	width="230"
+	height="150"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+
+
+
+	  <a href="#Sprites_Models">
+  <rect
+	x="750"
+	y="250"
+	width="150"
+	height="100"
+	fill="rgba(0, 0, 255, 0)"
+/>
+	<a href="#Sprites_Models">
+  <rect
+	x="540"
+	y="470"
+	width="140"
+	height="70"
+	fill="rgba(0, 0, 255, 0)"
+/>
+<a href="#Sprites_Models">
+  <rect
+	x="730"
+	y="380"
+	width="160"
+	height="150"
+	fill="rgba(0, 0, 255, 0)"
+/>
+
+  <!-- Grid overlay -->
+   <!--
+<pattern
+  id="grid"
+  width="50"
+  height="50"
+  patternUnits="userSpaceOnUse"
+>
+  <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ccc" />
+</pattern>
+
+<rect
+  width="100%"
+  height="100%"
+  fill="url(#grid)"
+/>-->
+
+
+
+
+</svg>
+
+	
+		</p>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+	<!--Topic: Game loop-->
+	<!--As with the starting Page I used sections to divide the text passages -->
+	<section class="text_blocks basics_text_block_one" id="text_block_one">
+        <h2 id="game_loop">The Game Loop</h2> 
+       
+        <p class="text_passages"> 
+What Is a Game Loop?
+
+The game loop is the core structure that makes a game run. It is a repeating cycle that continuously updates the game and displays it on the screen. As long as the game is running, the game loop keeps going.
+
+Without a game loop, a game would not respond to player input, update movement, or redraw graphics.
+
+<h3>Why Is the Game Loop Important?</h3>
+
+The game loop is important because it:
+<ul>
+<li>Keeps the game running smoothly</li>
+<li>Processes player input (keyboard, mouse, controller)</li>
+<li>Updates the game’s logic (movement, physics, AI)</li>
+<li>Draws the updated game to the screen every frame</li>
+</ul>
+
+Almost every video game, no matter how simple or complex, uses some form of a game loop.
+What Happens Inside a Game Loop?
+
+A basic game loop usually follows these steps:
+<ul>
+<li>Handle Input</li>
+  <ul>
+    <li>The game checks for player actions, such as pressing keys or moving a controller.</li>
+  </ul>
+<li>Update Game State</li>
+<ul>
+<li>The game updates everything based on the input and time:</li>
+
+<ul>
+<li>Player movement</li>
+<li>Enemy behavior</li>
+<li>Physics and collisions</li>
+<li>Score and game rules</li>
+<li>Render (Draw) the Game</li>
+<ul>
+<li>The game redraws the screen with the updated positions, animations, and visuals.</li>
+</ul>
+</ul></ul>
+</ul>This loop repeats many times per second, often 60 times per second (60 FPS).
+
+
+<h3>Types of Game Loops</h3>
+There are different ways to structure a game loop depending on the game and platform.
+ <h4>Fixed Time Step Loop</h4>
+<p>The game updates at a fixed rate (for example, 60 updates per second), no matter how fast the computer is. <br>
+This makes physics and movement more consistent, but it can be harder to implement.</p>
+
+<h4>Variable Time Step Loop</h4>
+<p>The game updates based on the amount of time that has passed since the last frame. <br>
+This is easier to implement, but movement and physics can feel inconsistent if frame rates change too much.
+Many modern games use a hybrid approach, combining both methods for smoother gameplay. <br>
+Example of a Simple Game Loop (Pseudocode) <br>
+Here is a very simple example of how a game loop might look:</p>
+
+<!--I wanted to display a gameloop so i made a box and coloured it accordingly-->
+<div class="code-panel"><code><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span><span class="variable">gameRunning</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line">    <span class="method">processInput</span><span class="punctuation">();</span></span><span class="line">    <span class="method">update</span><span class="punctuation">();</span></span><span class="line">    <span class="method">render</span><span class="punctuation">();</span></span><span class="line"><span class="brace">}</span></span></code></div>
+<p>This loop continues running until the player quits the game or the game ends.</p>
+
+
+<h3>Frame Rate and Performance</h3>The frame rate (FPS – Frames Per Second) determines how smooth a game feels.<ul><li>30 FPS – Playable but less smooth</li>
+<li>60 FPS – Smooth and common standard</li>
+<li>120 FPS+ – Very smooth, used in high-performance games</li>
+</ul>A well-designed game loop helps keep the frame rate stable and prevents lag or stuttering.
+
+<h3>Common Problems with Game Loops</h3>
+Some common issues developers face include:
+<ul>
+<li>Lag or stuttering due to heavy calculations in the loop</li>
+<li>Unstable physics caused by inconsistent time steps</li>
+<li>Input delay if input is not handled correctly</li>
+</ul>
+
+<h3>Conclusion</h3>
+The game loop is the heart of every video game. It controls how the game responds to player input, updates the world, and displays everything on screen. Understanding how the game loop works is a crucial first step for anyone interested in game development.
+Once you understand the game loop, you can move on to more advanced topics like physics engines, animation systems, and game optimization.</p>
+
+		
+	</section>
+	
+	<!--Topic: Delta Time-->
+		<section class="text_blocks">
+        <h2 id="Delta_Time">Delta Time</h2> 
+        
+        <p class="text_passages"> 
+    
+<h3>What Is Delta Time?</h3>
+
+Delta time (Δt) is the amount of time that has passed between two frames.
+In games, delta time is used to make movement, animations, and physics behave consistently, even when the frame rate changes.
+<p></p>
+<p>Instead of asking</p>
+“How many frames have passed?”
+
+<p>we ask</p>
+“How much time has passed?”
+
+<p></p>
+<h3>Why Is Delta Time Important?</h3>
+Without delta time:
+<ul>
+<li>Faster computers → faster gameplay</li>
+<li>Slower computers → slower gameplay</li>
+</ul>
+
+With delta time:
+<ul>
+<li>The game runs at the same speed on all devices</li>
+<li>Movement feels smooth and fair</li>
+<li>Physics behaves more predictably</li>
+</ul>
+<p></p>
+<h3>The Problem Without Delta Time</h3>
+Imagine a player moving 5 units per frame:
+<ul>
+	<li>At 30 FPS → 150 units per second</li>
+	<li>At 60 FPS → 300 units per second</li>
+</ul>
+Same code, but completely different speed
+
+<p></p>
+<h3>The Solution: Delta Time</h3>
+Instead of moving per frame, we move per second:
+position += speed × deltaTime
+
+Example:
+<ul>
+<li>Speed = 200 units per second</li>
+<li>Delta time = 0.016 seconds (≈ 60 FPS)</li>
+
+</ul>
+
+This ensures:
+<ul>
+<li>Same movement speed</li>
+
+<li>Independent of frame rate (Which is good)</li>
+</ul>
+<p></p>
+
+<div class="code-panel"><code><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span><span class="variable">gameRunning</span><span class="punctuation">)</span><
+<span class="brace">{</span></span><span class="line">   <span class="method">processInput</span><span class="punctuation">();</span></span><span class="line">   <span class="method">update</span><span class="punctuation">(</span><span class="variable">deltaTime</span><span class="punctuation">);</span></span><span class="line">   <span class="method">render</span><span class="punctuation">();</span></span><span class="line"><span class="brace">}</span></span></code></div>
+
+<P>The update step now depends on time, not frames.</P>
+
+<h3>Delta Time and the Game Loop</h3>
+Delta time fits directly into the game loop:
+<ol>
+<li>Measure time since last frame</li>
+<li>Process input</li>
+<li>Update game logic using delta time</li>
+<li>Render the frame</li>
+</ol>
+This makes delta time a core part of the game loop, not an extra feature.
+
+
+<h3>Common Problems with Delta Time</h3>
+<ul>
+<li>Very large delta times (lag spikes) can cause objects to jump</li>
+<li>Physics can break if delta time is not limited</li>
+<li>Many games clamp delta time to a maximum value</li>
+</ul>
+
+<p>Example:</p>
+deltaTime = min(deltaTime, 0.05);
+
+<p></p>
+<h3>Conclusion</h3>
+Delta time ensures that:
+<ul>
+<li>Games feel consistent</li>
+<li>Movement is smooth</li>
+<li>Performance differences don’t affect gameplay</li>
+</ul>
+
+
+Together with the game loop, delta time is one of the most important foundations of game programming.
+
+
+</p>
+
+	</section>
+		
+	<!--Coordinate Systems-->
+<section class="text_blocks">
+    <h2 id="Coordinate_Systems">Coordinate Systems</h2> 
+        <p class="text_passages"> 
+<h3>What Is a Coordinate System?</h3>
+A coordinate system is a way to describe where something is using numbers.
+<p></p>
+In games, coordinate systems are used to define:
+<ul>
+<li>Player position</li>
+<li>Enemy position</li>
+<li>Camera position</li>
+<li>UI element placement</li>
+</ul>
+If a game knows an object’s coordinates, it knows exactly where it is.
+
+<h3>The Coordinate System most Already Know (2D Graph)</h3>
+Yes, it’s basically the same one from math.
+
+<h4>2D Coordinate System:</h4>
+
+<ul>
+<li>X-axis → left ↔ right</li>
+<li>Y-axis → up ↔ down</li>
+</ul>
+
+Example:
+<p></p>
+(x, y) = (3, 2)
+<p></p>
+
+This means:
+<ul>
+<li>3 units to the right</li>
+<li>2 units up</li>
+</ul>
+This is perfect for 2D games (platformers, top-down games).
+<p></p>
+<h3>Important Difference: Screen Coordinates vs Math Coordinates</h3>
+
+<h4>Math Coordinate System:</h4>
+<ul>
+<li>(0,0) is in the center</li>
+<li>Y increases upwards</li>
+</ul>
+<!--Math Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="-5 -5 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="-5" y1="1" x2="6" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="6.6" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="6"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="6.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="-5" y1="-4" x2="6" y2="-4" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-3" x2="6" y2="-3" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-2" x2="6" y2="-2" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="-1" x2="6" y2="-1" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="0" x2="6" y2="0" stroke="#ccc" stroke-width="0.03"/>
+
+
+
+<line x1="-5" y1="2" x2="6" y2="2" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="3" x2="6" y2="3" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="4" x2="6" y2="4" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="5" x2="6" y2="5" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="6" x2="6" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-5" y1="7" x2="6" y2="7" stroke="#ccc" stroke-width="0.03"/>
+
+</g>
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="-4" y1="-5" x2="-4" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-3" y1="-5" x2="-3" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-2" y1="-5" x2="-2" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="-1" y1="-5" x2="-1" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="0" y1="-5" x2="0" y2="6" stroke="#ccc" stroke-width="0.03"/>
+
+
+
+<line x1="2" y1="-5" x2="2" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="3" y1="-5" x2="3" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="4" y1="-5" x2="4" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="5" y1="-5" x2="5" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="6" y1="-5" x2="6" y2="6" stroke="#ccc" stroke-width="0.03"/>
+<line x1="7" y1="-5" x2="7" y2="6" stroke="#ccc" stroke-width="0.03"/>
+
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="-4.2" y="0.8" font-size="0.3">-5</text>
+<text x="-3.2" y="0.8" font-size="0.3">-4</text>
+<text x="-2.2" y="0.8" font-size="0.3">-3</text>
+<text x="-1.2" y="0.8" font-size="0.3">-2</text>
+<text x="-0.2" y="0.8" font-size="0.3">-1</text>
+
+
+<text x="1.9" y="0.8" font-size="0.3">1</text>
+<text x="2.9" y="0.8" font-size="0.3">2</text>
+<text x="3.9" y="0.8" font-size="0.3">3</text>
+<text x="4.9" y="0.8" font-size="0.3">4</text>
+<text x="5.9" y="0.8" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.6" y="-4" font-size="0.3">5</text>
+<text x="0.6" y="-3" font-size="0.3">4</text>
+<text x="0.6" y="-2" font-size="0.3">3</text>
+<text x="0.6" y="-1" font-size="0.3">2</text>
+<text x="0.6" y="0" font-size="0.3">1</text>
+
+
+<text x="0.5" y="2.1" font-size="0.3">-1</text>
+<text x="0.5" y="3.1" font-size="0.3">-2</text>
+<text x="0.5" y="4.1" font-size="0.3">-3</text>
+<text x="0.5" y="5.1" font-size="0.3">-4</text>
+<text x="0.5" y="6.1" font-size="0.3">-5</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="3.2" y="4.2" font-size="0.3">(3,2)</text>
+</g>
+<g class="point_group">
+  <circle cx="-2" cy="1" r="0.15" fill="blue"/>
+  <text class="graph_label"x="-1.8" y="1." font-size="0.3">(-2,1)</text>
+</g>
+
+</svg>
+
+
+
+<h4>Screen / Game Coordinate System:</h4>
+
+<ul>
+<li>(0,0) is usually in the top-left</li>
+<li>Y increases downwards</li>
+</ul>
+
+
+
+
+<!--Screen Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="3.2" y="4.2" font-size="0.3">(3,2)</text>
+</g>
+
+
+
+
+</svg>
+
+
+
+<p id="text_part_move_up">This explains why “up” in games sometimes means subtracting Y.</p>
+
+<h3>Coordinates in Games (Practical Example)</h3>
+Imagine a player at:
+<p></p>
+playerPosition = (100, 250)
+<ul>
+<li>X = 100 → 100 pixels from the left</li>
+<li>Y = 250 → 250 pixels from the top</li>
+</ul>
+<p>Move player right:</p>
+x += 5
+
+
+<p>Move player up:</p>
+y -= 5
+<p></p>
+Yes, up is negative Y. That’s normal in games.
+
+<h3>3D Coordinate Systems</h3>
+3D games add a third axis:
+<ul>
+<li>X → left / right</li>
+<li>Y → up / down</li>
+<li>Z → forward / backward (depth)</li>
+</ul>
+(x, y, z)
+
+<!--3d Graph-->
+<svg class="coord_graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- Y-axis (Abscissa) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">y</text>
+  
+
+  <!-- Z-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">z</text>
+
+  <!-- X-axis (Applicate) -->
+  <line x1="1" y1="1" x2="11" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" /> 
+<text x="11.3" y="11.4" font-size="0.5">x</text>
+
+ 
+  
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="3.9" y="0.9" font-size="0.3">2</text>
+<text x="5.9" y="0.9" font-size="0.3">3</text>
+<text x="7.9" y="0.9" font-size="0.3">4</text>
+<text x="9.9" y="0.9" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="4.1" font-size="0.3">2</text>
+<text x="0.7" y="6.1" font-size="0.3">3</text>
+<text x="0.7" y="8.1" font-size="0.3">4</text>
+<text x="0.7" y="10.1" font-size="0.3">5</text>
+
+</g>
+
+<!--Notation Applicate-->
+<g id="Notation Applicate">
+<text x="2.2" y="2" font-size="0.3">1</text>
+<text x="3.2" y="3" font-size="0.3">2</text>
+<text x="4.2" y="4" font-size="0.3">3</text>
+<text x="5.2" y="5" font-size="0.3">4</text>
+<text x="6.2" y="6" font-size="0.3">5</text>
+<text x="7.2" y="7" font-size="0.3">6</text>
+<text x="8.2" y="8" font-size="0.3">7</text>
+<text x="9.2" y="9" font-size="0.3">8</text>
+<text x="10.2" y="10" font-size="0.3">9</text>
+
+
+</g>
+  <!-- Points -->
+   <g id="Points">
+
+   <g class="point_group">
+  <circle id="red_point"cx="3" cy="4" r="0.15" fill="red"/>
+<text class="graph_label"x="2" y="3.8" font-size="0.3">(2.5,1.5,2)</text>
+</g>
+
+<g class="point_group">
+  <circle id="black_point"cx="2" cy="8" r="0.15" fill="black"/>
+<text class="graph_label"x="1.3" y="8.6" font-size="0.3">(4,1,4)</text>
+</g>
+
+
+
+
+</g>
+
+<!--3d Box-->
+<g id="3d Box">
+<line x1="2" y1="8" x2="2" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="4" y1="8" x2="4" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="2" y1="6" x2="4" y2="6" stroke="black" stroke-width="0.04"/>
+<line x1="2" y1="8" x2="4" y2="8" stroke="black" stroke-width="0.04"/>
+
+<line x1="2" y1="6" x2="3" y2="7" stroke="gray" stroke-width="0.04"/>
+<line x1="3" y1="7" x2="5" y2="7" stroke="gray" stroke-width="0.04"/>
+<line x1="3" y1="7" x2="3" y2="9" stroke="gray" stroke-width="0.04"/>
+
+<line x1="4" y1="6" x2="5" y2="7" stroke="black" stroke-width="0.04"/>
+<line x1="4" y1="8" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+<line x1="5" y1="7" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+
+
+<line x1="2" y1="8" x2="3" y2="9" stroke="black" stroke-width="0.04"/>
+<line x1="3" y1="9" x2="5" y2="9" stroke="black" stroke-width="0.04"/>
+
+</g>
+
+</svg>
+
+
+<div id="text_part_2_move_up">
+Used in:
+<ul>
+<li>FPS games</li>
+<li>Open-world games</li>
+<li>3D simulations</li>
+</ul>
+</div>
+
+<h3 id="H2_move_up">Coordinate Systems & the Game Loop</h3>
+Coordinates are updated every frame inside the game loop.
+
+<p>Example:</p>
+
+position += velocity × deltaTime
+<p></p>
+
+This connects:
+
+<ul>
+  <li>Game Loop</li>
+
+<li>Delta Time</li>
+
+<li>Coordinate Systems</li>
+</ul>
+
+<h3>Common Mistakes</h3>
+<ul>
+  <li>Mixing up world coordinates and screen coordinates</li>
+  <li>Forgetting that Y goes downward</li>
+  <li>Moving objects per frame instead of per second</li>
+</ul>
+
+<h3>Conclusion</h3>
+Coordinate systems allow games to:
+
+<ul>
+  <li>Place objects precisely</li>
+  <li>Move them smoothly</li>
+  <li>Detect collisions</li>
+  <li>Control cameras and UI</li>
+</ul>
+Without coordinate systems, games could not exist.
+   		</p>
+
+	</section>
+
+
+
+
+
+
+<!--Topic: Input handling-->
+<section class="text_blocks">
+
+  <h2 id="Input_Handling">Input Handling</h2><p class="text_passages">Input handling describes how a game receives player input (keyboard, mouse, controller) and converts it into actions inside the game world. 
+Examples of player input are pressing "W" to move forward, Space to jump, or clicking the mouse to attack.
+  <h3>Basic Idea</h3>
+ At first glance, input handling may seem like a simple set of if-statements: Try it Yourself and Press W, A, S, D to Move the Red Dot
+ 
+
+<div class="code-panel_if_w"><code><span class="line_w"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "w"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_w">
+   <span class="method">moveUp</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_s"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "s"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_s">
+   <span class="method">moveDown</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_d"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "d"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_d">
+   <span class="method">moveRight</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+<div class="code-panel_if_w"><code><span class="line_a"><span class="keyword">if</span> <span class="punctuation">(</span><span class="variable">key == "a"</span><span class="punctuation">)</span> 
+<span class="brace">{</span></span><span class="line_a">
+   <span class="method">moveLeft</span><span class="punctuation">();</span>
+<span class="brace">}</span></span></code></div>
+
+
+<svg class="coord_graph" id="Moving_Graph"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+   <g class="point_group">
+  <circle id="red_point_to_move"cx="3" cy="4" r="0.15" fill="red"/>
+<text id="point_location"x="10" y="11" font-size="0.3">(2.00, 3.00)</text>
+</g>
+
+
+
+
+</svg>
+
+
+<details  id="code_example_summary">
+  <summary>See the pseudocode example for how not to do it</summary>
+<div class="code-panel_eg"><code>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move"</span>);</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">step</span> = <span class="number">0.2</span>;</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">x</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cx"</span>));</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">y</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cy"</span>));</span>
+
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keydown"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="comment">//  naive if-statement movement</span></span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"w"</span>) {</span>
+<span class="line_eg">        <span class="variable">y</span> -= <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"s"</span>) {</span>
+<span class="line_eg">        <span class="variable">y</span> += <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"a"</span>) {</span>
+<span class="line_eg">        <span class="variable">x</span> -= <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">event.key</span> === <span class="string">"d"</span>) {</span>
+<span class="line_eg">        <span class="variable">x</span> += <span class="variable">step</span>;</span>
+<span class="line_eg">    }</span>
+
+<span class="line_eg">    <span class="comment">//  only updates position on first key press, no hold or multiple keys</span></span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cx"</span>, <span class="variable">x</span>);</span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cy"</span>, <span class="variable">y</span>);</span>
+<span class="line_eg">});</span>
+
+</code></div>
+</details>
+
+</p>
+
+<pre id="Pseudocode_problems_to_move_up"><p>
+While this works for very small programs, it quickly becomesimpractical in real games. 
+Games need smooth movement, multiple keys at once, key rebinding, pausing, and support for different input devices.
+
+<h3>Problems you can see in the code above:</h3>
+  - Holding down the key does not continue movement.
+  - Multiple keys pressed at once are not correctly handled.
+  - Input is directly tied to movement, making it hard to change behavior based on game state.
+  - No support for different input devices (controllers, mouse).
+  - Difficult to implement features like pausing or disabling input.
+  - Movement speed is not frame-rate independent.
+  - No separation between input detection and game logic.
+  - Hard to manage complex input schemes or combos.
+  - Not scalable for larger games with more actions.
+  - Lacks flexibility for future changes or additions.
+  - Does not account for delta time in movement calculations.
+  - Ignores context (e.g., player can't move while in a menu).
+  - No easy way to implement key rebinding or customizable controls.
+  - And likely many more issues.</p></pre>
+  
+
+<h3>How Input Handling Works in Practice</h3>
+Modern games usually split input handling into three logical layers:
+
+  <ol>
+    <li><b>Raw Input</b> – detecting which key or button was pressed</li>
+    <li><b>Input State</b> – storing which inputs are currently active</li>
+    <li><b>Game Actions</b> – using the input to control the game</li>
+  </ol>
+
+  <h4>1. Raw Input</h4>
+    Raw input is provided by the system or browser. At this stage,
+    the game only detects that a key was pressed or released.
+    No movement or actions happen here.
+ 
+<p></p>
+  <h4>2. Input State</h4>
+    Instead of reacting immediately, the game stores the current
+    input state. This allows the game to know which keys are being
+    held down at any moment.
+  <p></p>
+<div class="code-panel_eg"><pre><code><span class="line_eg"><span class="variable">keys</span>[<span class="string">"w"</span>] = <span class="keyword">true</span>;   <span class="comment">// key is pressed</span></span>
+<span class="line_eg"><span class="variable">keys</span>[<span class="string">"w"</span>] = <span class="keyword">false</span>;  <span class="comment">// key is released</span></span></code></pre></div>
+  <p></p>
+<p>
+    This makes it possible to handle multiple inputs at the same time,
+    such as moving diagonally or sprinting while moving.
+  </p>
+
+  <h4>3. Game Actions</h4>
+
+  <p>
+    The input state is checked every frame inside the game loop.
+    The game then decides which actions should be performed.
+  </p>
+  <p></p>
+<div class="code-panel_eg"><pre><code><span class="line_eg"><span class="keyword">if</span> (<span class="variable">keys</span>[<span class="string">"w"</span>]) <span class="brace">{</span></span>
+<span class="line_eg">  <span class="variable">player</span>.<span class="method">moveForward</span>();</span>
+<span class="line_eg"><span class="brace">}</span></span></code></pre></div>
+<p></p>  
+<p>
+    Whether an action is allowed depends on the game state.
+    For example, the player may not be able to move while the
+    game is paused or while an animation is playing.
+  </p>
+
+  <h3>Why This Approach Is Important</h3>
+  <ul>
+    <li>Smooth and consistent movement</li>
+    <li>Multiple keys can be used at once</li>
+    <li>Easy to disable input (pause menus)</li>
+    <li>Supports key rebinding and controllers</li>
+    <li>Works correctly with delta time and the game loop</li>
+  </ul>
+
+  <h3>Summary</h3>
+
+  <p>
+    Input handling is not just reacting to a key press.
+    Instead, games record player input, track its current state,
+    and process it every frame to create responsive and flexible
+    controls.
+  </p>
+
+<svg class="coord_graph_last_eg" id="Moving_Graph_right"
+  width="30%"
+  height="30%"
+  viewBox="0 0 12 12"
+  style="border: 1px solid black"
+  stroke-width="0.1"
+
+>
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11"
+            refX="0.25" refY="2" orient="auto">
+      <path d="M0,0 L4,2 L0,4 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- X-axis (Abszisse) -->
+  <line x1="0" y1="1" x2="11" y2="1"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="11.4" y="1.1" font-size="0.5">x</text>
+
+  <!-- Y-axis (Ordinate) -->
+  <line x1="1" y1="-5" x2="1" y2="11"
+        stroke="black"
+        marker-end="url(#arrow)" />
+  <text x="0.9" y="11.7" font-size="0.5">y</text>
+
+
+
+<!--Grid Vertical-->
+<g id="Grid Vertical">
+<line x1="1" y1="2" x2="11" y2="2" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="3" x2="11" y2="3" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="4" x2="11" y2="4" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="5" x2="11" y2="5" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="6" x2="11" y2="6" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="7" x2="11" y2="7" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="8" x2="11" y2="8" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="9" x2="11" y2="9" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="10" x2="11" y2="10" stroke="#ccc" stroke-width="0.02"/>
+<line x1="1" y1="11" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Grid Horizontal-->
+<g id="Grid Horizontal">
+<line x1="2" y1="1" x2="2" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="3" y1="1" x2="3" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="4" y1="1" x2="4" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="5" y1="1" x2="5" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="6" y1="1" x2="6" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="7" y1="1" x2="7" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="8" y1="1" x2="8" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="9" y1="1" x2="9" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="10" y1="1" x2="10" y2="11" stroke="#ccc" stroke-width="0.02"/>
+<line x1="11" y1="1" x2="11" y2="11" stroke="#ccc" stroke-width="0.02"/>
+</g>
+
+<!--Notation Horizontal-->
+<g id="Notation Horizontal">
+<text x="1.9" y="0.9" font-size="0.3">1</text>
+<text x="2.9" y="0.9" font-size="0.3">2</text>
+<text x="3.9" y="0.9" font-size="0.3">3</text>
+<text x="4.9" y="0.9" font-size="0.3">4</text>
+<text x="5.9" y="0.9" font-size="0.3">5</text>
+<text x="6.9" y="0.9" font-size="0.3">6</text>
+<text x="7.9" y="0.9" font-size="0.3">7</text>
+<text x="8.9" y="0.9" font-size="0.3">8</text>
+<text x="9.9" y="0.9" font-size="0.3">9</text>
+<text x="10.9" y="0.9" font-size="0.3">10</text>
+</g>
+
+<!--Notation Vertical-->
+<g id="Notation Vertical">
+<text x="0.7" y="2.1" font-size="0.3">1</text>
+<text x="0.7" y="3.1" font-size="0.3">2</text>
+<text x="0.7" y="4.1" font-size="0.3">3</text>
+<text x="0.7" y="5.1" font-size="0.3">4</text>
+<text x="0.7" y="6.1" font-size="0.3">5</text>
+<text x="0.7" y="7.1" font-size="0.3">6</text>
+<text x="0.7" y="8.1" font-size="0.3">7</text>
+<text x="0.7" y="9.1" font-size="0.3">8</text>
+<text x="0.7" y="10.1" font-size="0.3">9</text>
+<text x="0.6" y="11.1" font-size="0.3">10</text>
+</g>
+
+  <!-- Points -->
+<g class="point_group">
+  <circle id="red_point_to_move_correct"cx="3" cy="4" r="0.15" fill="red"/>
+<text id="point_location_of_correct_eg"x="10" y="11" font-size="0.3">(2.00, 3.00)</text>
+</g>
+
+
+
+
+</svg>
+<details  id="code_example_summary">
+  <summary>See the code used above for how to do it</summary>
+<div class="code-panel_eg"><code>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move_correct"</span>);</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">pointLocation</span> = <span class="method">document.getElementById</span>(<span class="string">"point_location_of_correct_eg"</span>);</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">x</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cx"</span>));</span>
+<span class="line_eg"><span class="keyword">let</span> <span class="variable">y</span> = <span class="method">parseFloat</span>(<span class="variable">redPoint</span>.<span class="method">getAttribute</span>(<span class="string">"cy"</span>));</span>
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">step</span> = <span class="number">0.1</span>;</span>
+
+<span class="line_eg"><span class="keyword">const</span> <span class="variable">keysPressed</span> = {};</span>
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keydown"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="variable">keysPressed</span>[<span class="variable">event.key</span>] = <span class="keyword">true</span>;</span>
+<span class="line_eg">});</span>
+
+<span class="line_eg"><span class="method">document.addEventListener</span>(<span class="string">"keyup"</span>, (<span class="variable">event</span>) => {</span>
+<span class="line_eg">    <span class="variable">keysPressed</span>[<span class="variable">event.key</span>] = <span class="keyword">false</span>;</span>
+<span class="line_eg">});</span>
+
+<span class="line_eg"><span class="keyword">function</span> <span class="method">gameLoop</span>() {</span>
+<span class="line_eg">    <span class="method">updateMovement</span>();</span>
+<span class="line_eg">    <span class="method">requestAnimationFrame</span>(<span class="method">gameLoop</span>);</span>
+<span class="line_eg">}</span>
+
+<span class="line_eg"><span class="method">requestAnimationFrame</span>(<span class="method">gameLoop</span>);</span>
+
+<span class="line_eg"><span class="keyword">function</span> <span class="method">updateMovement</span>() {</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"w"</span>]) y -= step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"s"</span>]) y += step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"a"</span>]) x -= step;</span>
+<span class="line_eg">    <span class="keyword">if</span> (<span class="variable">keysPressed</span>[<span class="string">"d"</span>]) x += step;</span>
+
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cx"</span>, x);</span>
+<span class="line_eg">    <span class="variable">redPoint</span>.<span class="method">setAttribute</span>(<span class="string">"cy"</span>, y);</span>
+
+<span class="line_eg">    <span class="variable">pointLocation</span>.<span class="property">textContent</span> = "(" + (x - 1).<span class="method">toFixed</span>(<span class="number">2</span>) + ", " + (y - 1).<span class="method">toFixed</span>(<span class="number">2</span>) + ")";</span>
+<span class="line_eg">}</span>
+</code></div>
+</details>
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<section class="text_blocks">
+        <h2 id="Sprites_Models">Sprites / Models Basics</h2> 
+        
+<p class="text_passages"> 
+   
+  
+<h3>1. What Are Sprites and Models?</h3>
+
+<h4>Sprites</h4><ul>
+<li>2D graphics or images used in games or applications.</li>
+<li>Typically used for characters, objects, or UI elements.</li>
+<li>Can be static (single image) or animated (sequence of images).</li>
+<li>Example: The player character in old Mario games.</li>
+</ul>
+<h4>Models</h4>
+
+<ul>
+<li>3D representations of objects, characters, or environments.</li>
+<li>Defined by vertices, edges, and faces in 3D space.</li>
+<li>Can be static or animated (e.g., walking animation).</li>
+<li>Example: 3D characters in Minecraft or Fortnite.</li>
+</ul>
+Visual Idea: Show a side-by-side of a 2D sprite vs a 3D model of the same character.
+<p></p>
+<div id="picture_container">
+<img id="Mario_2d_Sprite" src="../Pictures/2d_Mario.png" alt="2d Mario Sprite" >
+<img id="Mario_3d_Model" src="../Pictures/3d_Mario.png" alt="3d Mario Model">
+</div>
+
+
+
+
+<p></p>
+<h3>2. How They Are Used</h3>
+
+<div id="usage_sprite_picture_container">
+<h4>Sprites:</h4>
+<ul>
+<div id="usage_plattformer_picture_container">
+<li>Platformer games (Mario, Sonic)</li>
+<li>Top-down RPGs (Zelda, Pokemon)</li>
+<img id="Sonic_picture" src="../Pictures/platformer-games.png" alt="Picture of a platformer game(Sonic)">
+</div>
+<div id="usage_ui_picture_container">
+<li>UI icons and health bars</li>
+<li>Particle effects (explosions, smoke)</li>
+<img id="UI_picture" src="../Pictures/Game_UI's.png" alt="Picture of UI sprites">
+</div>
+</ul>
+</div>
+
+<div id="usage_model_picture_container">
+<h4>Models:</h4>
+<ul>
+
+<li>3D games (FPS, RPGs)</li>
+<li>VR/AR experiences</li>
+<li>Simulations and animations</li>
+<img id="FPS_picture" src="../Pictures/fortnite_gameplay.jpg" alt="Picture of a 3D FPS game">
+</ul>
+</div>
+
+
+<img src="../Pictures/Sprite_Model_comparison.png" alt="">
+
+<p></p>
+<h3>3. Animation Basics</h3>
+
+<h4>Sprites:</h4>
+<ul>
+<li>Frame-based animation (sprite sheet)</li>
+<li>Flipbook-style → multiple images in sequence</li>
+</ul>
+
+<h4>Models:</h4>
+<ul>
+<li>Rigging: skeleton inside the model</li>
+<li>Skinning: connecting model to the skeleton</li>
+<li>Animations applied to bones (walk, run, jump)</li>
+</ul>
+
+<div id="animation_picture_container">
+  <video id="Walking_3d" src="../Videos/3D_Walking _Animation.mp4" loop controls autoplay muted></video>
+  <video id="Running_2d" src="../Videos/Running_Animation0001-0103.mkv" loop controls autoplay muted></video>
+</div>
+
+<p></p>
+<h3>4. Key Concepts / Terms</h3>
+<ul>
+<li>Texture: Image applied to model or sprite.</li>
+<li>Frame: A single image in a sprite animation.</li>
+<li>Rigging / Skeleton: Bones inside 3D model for animation.</li>
+<li>Vertex / Edge / Face: Building blocks of 3D models.</li>
+<li>Hitbox: Invisible shape used for collisions.</li>
+</ul>
+<p></p>
+<div id="key_concepts_picture_container">
+  <img id="Texture_example" src="../Pictures/Texture_eg.png" alt="Texture Example on 3D Model">
+  <img id="Frame_Rigging_example" src="../Pictures/Rigging, Frames_Edit.png" alt="Frame and Rigging Example on 2D Sprite">
+  <img id="Vertex_Edge_Face_example" src="../Pictures/Vertex, Edges, Faces_edit.png" alt="Vertex, Edge and Face Example on 3D Model">
+  <img id="Hitbox_example" src="../Pictures/HitBoxes_Image_edit.png" alt="Hitbox Example on 2D Sprite">
+
+</div>
+<p></p>
+<p></p>
+<h3>5. Tools and Formats</h3>
+
+<h4>Sprites:</h4>
+<ul>
+  <li>Tools: Photoshop, Aseprite, Piskel</li>
+  <li>Formats: PNG, GIF, SVG</li>
+</ul>
+<h4>Models:</h4>
+<ul>
+  <li>Tools: Blender, Maya, 3DS Max</li>
+  <li>Formats: OBJ, FBX, GLTF</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+	</section>
+
+<section class="text_blocks">
+        <h2 id="Basic_Logic">Basic Logic</h2> 
+        
+<p class="text_passages"> Basic Logic is the foundation of how games (and programs in general) decide what happens next. It’s about conditions, decisions, and consequences. It’s essentially teaching your game how to think.
+
+
+
+<h3>What is Logic in Games?</h3>
+In games, logic answers questions like:
+<ul>
+<li>Can the player jump right now?</li>
+<li>Did the enemy see the player?</li>
+<li>Is this door locked or unlocked?</li>
+<li>Did the player win or lose?</li>
+</ul>
+Logic is not about graphics or sound. It’s about rules.
+
+
+<p></p>
+<h3>Conditions ("If this, then that")</h3>
+At the heart of basic logic are conditions.
+
+Examples:
+<ul></ul>
+<li>If the player’s health is 0 → the player dies</li>
+
+<li>If the key is collected → the door can open</li>
+
+<li>If the player presses jump <strong>and</strong> is on the ground → jump</li>
+</ul>
+Think of conditions like yes/no questions your game constantly asks.
+
+
+<p></p>
+<h3>Boolean Logic (True / False)</h3>
+
+Most decisions rely on booleans, which can only be:
+<ul>
+<li><strong>true</strong></li>
+<li><strong>false</strong></li>
+</ul>
+
+Examples:
+<ul>
+<li class="code_effect">isGrounded = true</li>
+<li class="code_effect">hasKey = false</li>
+<li class="code_effect">enemyAlerted = true</li>
+</ul>
+
+These values control what actions are allowed.
+
+
+<p></p>
+<h3>Combining Conditions</h3>
+
+Games rarely check just one thing.
+<p></p>
+Common logic combinations:
+<ul>
+<li><strong>AND</strong> → all conditions must be true</li>
+<li><strong>OR</strong> → at least one condition must be true</li>
+<li><strong>NOT</strong> → reverses a condition</li>
+</ul>
+
+Examples in plain language:
+<ul>
+<li>Player can sprint <strong>if</strong> stamina > 0 <strong>AND</strong> sprint key is held</li>
+<li>Alarm triggers <strong>if</strong> player is seen <strong>OR</strong> camera is hacked</li>
+<li>Door opens <strong>if</strong> NOT locked</li>
+</ul>
+<p></p>
+<h3>Game State</h3>
+Logic often depends on the current state of the game.
+<p></p>
+Examples of states:
+<ul>
+<li>Menu</li>
+<li>Playing</li>
+<li>Paused</li>
+<li>Game Over</li>
+</ul>
+
+Certain actions only work in certain states:
+<ul>
+<li>Player movement only works while Playing</li>
+<li>Buttons behave differently in *Menu* vs Pause</li>
+</ul>
+This prevents bugs and unintended behavior.
+
+<p></p>
+<h3>Cause and Effect</h3>
+
+Good logic follows clear cause-and-effect rules:
+<ul>
+<li>Player action → logic check → result</li>
+</ul>
+
+Examples:
+<ul>
+<li>Player shoots → ammo decreases → enemy takes damage</li>
+<li>Timer reaches zero → logic triggers → round ends</li>
+</ul>
+
+This predictability is what makes games feel fair.
+
+
+<p></p>
+<h3>Why Basic Logic Matters</h3>
+
+Without solid logic:
+<ul>
+<li>Controls feel unresponsive</li>
+<li>Bugs appear everywhere</li>
+<li>Systems break each other</li>
+</ul>
+
+With good logic:
+<ul></ul>
+<li>Gameplay feels smooth</li>
+<li>Rules are clear to the player</li>
+<li>Complex systems become manageable</li>
+</ul>
+<p></p>
+In Short:
+<strong>Logic is the decision-making system of a game.</strong>
+<p></p>
+It controls:
+<ul>
+<li>What is allowed</li>
+<li>When something happens</li>
+<li>Why something happens</li>
+</ul>
+
+Every advanced game system (AI, physics interactions, combat, UI) is built on these simple logical rules.
+
+
+
+
+</p>
+  </section>
+
+
+
+
+
+
+
+
+	<script src="../Java_Scripts/Basics_Page.js"></script>
+  <script src="../Java_Scripts/Header.js"></script>
+	</body>
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+</html>
