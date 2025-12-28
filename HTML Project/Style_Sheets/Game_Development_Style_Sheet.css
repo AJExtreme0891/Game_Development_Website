@@ -1,0 +1,349 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #97e0f7, #b8ddff);
+	background-attachment: fixed;
+    color: #002f6c;
+    text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+h2 {
+	font-size:1.5vw;
+	margin-top:5px;
+	margin-bottom:7px;
+}
+
+#Back_To_Top
+{
+opacity: 0;
+visibility: hidden;
+position: fixed;
+top: 100%;
+width: fit-content;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0,0,0,0.3);
+background-color: white;
+border-color: black;
+z-index: 1000000;
+transform:translateX(-50%);
+transition: all 0.5s;
+font-size: 1.2vw;
+}
+#Back_To_Top.show {
+  opacity: 1;
+  visibility: visible; /* becomes visible instantly, then fades in via opacity */
+  top: 95%;
+}
+
+#Switch_Lang_Label{
+opacity: 0;
+visibility: hidden;
+position: fixed;
+top: 4%;
+right: 2%;
+width: 6%;
+box-shadow: 0 0 15px rgba(0,0,0,0.6);
+border-color: whtie;
+border-radius: 8px;
+z-index: 10000001;
+text-decoration: none;
+color: black;
+background-color: white;
+transition: all 0.25s;
+}
+
+#German_Flag{
+position: fixed;
+top: 2%;
+right: 3%;
+width: 4%;
+
+box-shadow: 0 0 15px rgba(0,0,0,0.6);
+border-color: whtie;
+border-radius: 8px;
+z-index: 1000000;
+}
+
+#Switch_Lang_Link:hover #Switch_Lang_Label, #Switch_Lang_Label:hover{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+
+
+/*#region Header*/
+
+/*Blue Box of the header*/
+#Head_Part{
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:8%;
+	background-color: #5B9BD5;
+	z-index:2;
+	min-height: 40px;
+	transition: all 1s ease;
+}
+
+
+/*Grey Box of the Header*/
+#Second_Head{
+	position:fixed;
+	top: 8%;
+	width:100%;
+	height:3%;
+	background-color: #404040;
+	z-index:1;
+	margin-bottom:0px;
+    /*overflow: hidden;*/
+	display: flex;
+    justify-content: center;   
+    align-items: center;       
+    padding: 0.5vw 0; 
+	min-height: 20px;
+	transition: all 1s ease;
+	
+}
+
+/*Title of the Header (Game Development)*/
+#title{
+	display:inline-block;
+	margin-top:0.3%;
+	margin-bottom: 0px;
+	width:80%;
+	font-size:2vw;
+	justify-content: center;
+	z-index: 3;
+	border-bottom: 0.1em solid;
+	border-color: white;
+
+}
+
+
+/*Table inside the Header*/
+#table_header{
+	position:relative;
+	bottom:0;
+	z-index:3;
+	color:white;
+	display:inline-block;
+	border-collapse:collapse;
+	width:max-content;
+    gap: 4vw;
+	text-decoration: none;  
+	
+}
+.menu_data{
+	font-size:1.6vw;
+	border-left: 0;
+	border-right: 0;
+	border-left:solid;
+	border-right:solid;
+	padding-right:6vw;
+	padding-left:6vw;
+	margin-bottom:0;
+	padding-bottom: 0;
+	position:relative;
+	text-decoration: none;
+	
+	    
+}
+
+#menu_button{
+	position: relative;
+	cursor: pointer; /*this changes what the cursor looks like when hovering on it*/
+	width: 100%;
+	
+
+}
+
+#menu_button p{
+    margin: 0;       /* remove default paragraph spacing */
+    padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+.menu_data a{
+	text-decoration: none;
+	color: white;
+}
+.menu_data a:hover{
+border-left: 2px solid;
+border-right: 2px solid;
+}
+
+
+
+#popup_menu {
+	opacity: 0; /*so its not visible the entire time*/
+	
+	color:#002f6c;
+	display: block;
+    position: fixed; 
+	    top: 12%;
+    left: 32.63%;
+    width: 14.5%;
+    background: white;
+    padding: 1vw;
+    z-index: 3;
+	transition: opacity 0.5s;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	text-decoration: none;
+	border: 0;
+	visibility: hidden; /*so you cant press the links because invisibility doesnt been intangibility*/
+}
+
+#menu_button:hover #popup_menu,
+#popup_menu:hover {
+	visibility: visible; /*tangable and visible*/
+	opacity: 1; /*visible and fade animation*/
+
+}
+
+#popup_menu a {
+    display: block;    
+    padding: 0.5vw 0;      
+    color: #002f6c;         
+    text-decoration: none;   
+	font-size: 1.2vw;
+
+}
+
+#popup_menu a:hover{
+	border: 1px solid;
+}
+
+/*#endregion Header*/
+
+
+
+/*#region Topics Sections*/
+
+/*Topic one*/
+#topic_one{
+	position:relative;
+ 	overflow: hidden; /*text or images should spill out of the frame*/
+	display:flex;
+	width: 65%;
+	border-radius:15px;
+	margin:auto; 
+	background-color:white;
+	z-index:2; /*it needs to be behind the header*/
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	transition: 0.5s;
+	aspect-ratio:2 / 1.3; /*I want the height to be proportional to the width. This is to minimize damage from rezising the image*/
+	margin-top: 300px;
+}
+
+#topic_one:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px rgba(0,0,0,0.6);
+
+}
+
+/*needed to move the image seperatly because it wasnt centered*/
+#topic_one img{
+position:relative;
+left:-7%;
+}
+
+
+/*class to configure the text inside of the sections*/
+.text_panel {
+	transform:translateY(-50%);
+	bottom:-70%;
+    position: absolute;
+	justify-content: center;
+	height:40%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+	border-radius: 7px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+	padding-top: 5px;
+    transition: 0.8s ease;
+	z-index:1;
+	text-align:left;
+	opacity: 0.85;
+	font-size:0.9vw ;
+}
+/*the text is outside of the section which hides its overflow so it was positioned outside of it and now its positioned back into it*/
+#topic_one:hover .text_panel {
+    bottom:-40%;
+
+}
+
+
+/*Configures the Table inside the sections (for design purposes)*/
+.topic_data {
+    padding-right: 120px;
+	padding-left: 100px;
+    text-align: left;
+	font-size:1.3vw;
+}
+
+
+
+
+/*managed to turn the sections into a class didnt do it for the first one because of its relative position to the top of the window*/
+.topics{
+	overflow: hidden;
+	position:relative;
+	width: 65%;
+	border-radius: 7px;
+	gap: 100px;
+	margin:auto;
+	margin-top:10%;
+	display:flex;
+	background-color:white;
+	z-index:0;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	transition: 0.5s;
+	aspect-ratio:2 / 1.3;
+	
+}
+/*Picture for the second topic*/
+#game_physics_img{
+	position:relative;
+	left:-11%;
+}
+
+/*All sections within the topics class have this hover effect which changes config of text_panel*/
+.topics:hover .text_panel {
+    bottom:-40%;
+
+}
+
+
+/*effect that slightly scales the size of the sections*/
+.topics:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px rgba(0,0,0,0.6);
+
+}
+/*#endregion Topics Sections*/
+
+/*At the very bottom an invisible box to create a space (for design purposes)*/
+#free_space{
+	background-color: white;
+	height:20%;
+	width:100%;
+	gap: 100px;
+	margin: 100px;
+	opacity:0;
+}
+
