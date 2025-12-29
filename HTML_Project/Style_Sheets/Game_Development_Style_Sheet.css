@@ -1,0 +1,371 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #97e0f7, #b8ddff);
+	background-attachment: fixed;
+    color: #002f6c;
+    text-align: center;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links || Weiches Scrollen bei Anker-Links */
+}
+
+
+:root { /*This selects the root element of the document (<html>), so the variables inside can be used anywhere in your CSS. || Wählt das Root-Element (<html>) aus, damit die Variablen überall im CSS verwendet werden können.*/
+  --header-main: clamp(60px, 9vh, 90px); /*Main header will be at least 60px, scale with 9% of viewport height, but not exceed 90px. || Hauptheader ist mindestens 60px, skaliert mit 9% der Fensterhöhe, aber höchstens 90px.*/ 
+  --header-main-small: clamp(40px, 6vh, 56px); /*Smaller main header (e.g., on scroll) scales similarly.|| Kleinerer Hauptheader (z.B. beim Scrollen) skaliert ähnlich.*/
+  --header-second: clamp(24px, 4vh, 48px); /*Second header (grey bar) scales with the viewport, minimum 24px, maximum 48px.|| Zweiter Header (graue Leiste) skaliert ebenfalls mit Viewport, min. 24px, max. 48px.*/
+}
+
+/*These are CSS custom properties (variables) that store height values. || CSS-Variablen, die Höhenwerte speichern.
+clamp(min, preferred, max) → Ensures a value scales with the viewport but stays between a minimum and maximum||→ Stellt sicher, dass ein Wert mit der Viewportgröße skaliert, aber innerhalb von Minimum und Maximum bleibt  
+
+*/
+
+
+h2 {
+	font-size:1.5vw;
+	margin-top:5px;
+	margin-bottom:7px;
+}
+
+#Back_To_Top
+{
+	opacity: 0;/* initial invisibility || Anfangs unsichtbar */
+	visibility: hidden;/* element not interactable || Element nicht anklickbar */
+	position: fixed;/* fixed relative to viewport, stays on scroll || Fixiert relativ zum Viewport, bleibt beim Scrollen sichtbar */
+	top: 100%;/* starting position offscreen || Startposition außerhalb des Bildschirms */
+	width: fit-content;/* width adjusts to content size || Breite passt sich an Inhalt an */
+	border-radius: 8px; /* rounded corners || Abgerundete Ecken */
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);/* shadow effect || Schatteneffekt */
+	background-color: white;/* background color || Hintergrundfarbe */
+	border-color: black;/* border color || Rahmenfarbe */
+	z-index: 1000000;/* stacking order, very high || Stapelreihenfolge, sehr hoch */
+	transform:translateX(-50%);/* horizontally center via transform || Horizontal zentriert über Transformation */
+	transition: all 0.5s;/* smooth transitions for all properties || Weiche Übergänge für alle Eigenschaften */
+	font-size: clamp(0.5rem, 1vw, 2rem);/* scales with viewport but min/max enforced || Skaliert mit Viewport, min/max eingeschränkt */
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+	color: black;
+}
+#Back_To_Top.show {
+  opacity: 1;
+  visibility: visible; /* setting visibilty with intangibility but still allowing animation unlike display:none || Sichtbarkeit bei gleichzeitiger Ungreifbarkeit festlegen, aber im Gegensatz zu display:none dennoch Animationen ermöglichen */
+  top: 95%;
+}
+
+#Switch_Lang_Label{
+opacity: 0;
+visibility: hidden;/* cannot interact || Nicht anklickbar */
+position: fixed;
+top: 4%;
+right: 2%;
+width: 6%;
+box-shadow: 0 0 15px rgba(0,0,0,0.6);
+border-color: white;
+border-radius: 8px;
+z-index: 10000001;
+text-decoration: none; /* remove underline || Unterstreichung entfernen */
+color: black;
+background-color: white;
+transition: all 0.25s;
+font-size: clamp(0.2rem, 1vw, 2rem);
+}
+
+#German_Flag{
+position: fixed;
+top: 2%;
+right: 3%;
+width: clamp(30px, 4%, 95px);
+box-shadow: 0 0 15px rgba(0,0,0,0.6);
+border-color: white;
+border-radius: 8px;
+z-index: 1000000;
+}
+
+#Switch_Lang_Link:hover #Switch_Lang_Label, #Switch_Lang_Label:hover{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+
+
+/*#region Header*/
+
+#Header_Wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  overflow: hidden;
+  height: calc(var(--header-main) + var(--header-second)); /* dynamic height from variables || Dynamische Höhe aus Variablen */
+}
+
+#Head_Part {
+  position: relative; 
+  z-index: 10;       
+  height: var(--header-main);/* height from variable || Höhe aus Variable */
+  background-color: #5B9BD5;
+  transition: height 0.4s ease;
+}
+
+#Second_Head {
+  position: absolute;   /* slides within wrapper || Absolut positioniert innerhalb des Wrappers */
+  top: var(--header-main); /* below main header || Unter dem Hauptheader */
+  left: 0;
+  right: 0;
+  height: var(--header-second);
+  background-color: #404040;
+  display: flex;
+  align-items: center;/* vertical centering || Vertikale Zentrierung */
+  justify-content: center;/* horizontal centering || Horizontale Zentrierung */
+  transition: transform 0.4s ease, opacity 0.3s ease;/* smooth slide and fade || Sanftes Verschieben und Einblenden */
+  opacity: 1;
+  z-index: 5; /* below main header */
+}
+
+/* Shrink animation */
+#Header_Wrapper.shrunk #Head_Part {
+  height: var(--header-main-small); /* reduce height on scroll || Höhe beim Scrollen verringern */
+}
+
+#Header_Wrapper.shrunk #Second_Head {
+  transform: translateY(-100%); /* slide up || Nach oben verschieben */
+  opacity: 0;/* fade out || Ausblenden */
+}
+
+
+/*Title of the Header (Game Development)*/
+#title{
+	display:inline-block;
+	margin-top:0.3%;
+	margin-bottom: 0px;
+	width:80%;
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);/* scales with viewport but min/max enforced || Skaliert mit Viewport, min/max eingeschränkt */
+	justify-content: center;
+	z-index: 3;
+	border-bottom: 0.1em solid;
+	border-color: white;
+
+}
+
+
+
+/*Table inside the Header*/
+#table_header{
+	position:relative;
+	bottom:0;
+	z-index:3;
+	color:white;
+	display:inline-block;
+	border-collapse:collapse; /* merge table borders || Tabellenrahmen zusammenführen */
+	width:max-content;/* table width fits content || Tabellenbreite passt sich Inhalt an */
+    gap: 4vw;/* spacing between cells || Abstand zwischen Zellen */
+	text-decoration: none;  
+	
+}
+.menu_data{
+	font-size: clamp(1.2rem, 2.5vw, 2rem);/* responsive font || Responsiver Schriftgrad */
+	border-left: 0;
+	border-right: 0;
+	border-left:solid;
+	border-right:solid;
+	padding-right:6vw;
+	padding-left:6vw;
+	margin-bottom:0;
+	padding-bottom: 0;
+	position:relative;
+	text-decoration: none;   
+}
+
+#menu_button{
+	position: relative;
+	cursor: pointer; /* changes cursor on hover || Cursor ändert sich beim Hover */
+	width: 100%;
+	
+
+}
+
+#menu_button p{
+    margin: 0;     
+    padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+.menu_data a{
+	text-decoration: none;
+	color: white;
+}
+.menu_data a:hover{
+border-left: 2px solid;
+border-right: 2px solid;
+}
+
+
+
+#popup_menu {
+	font-size: clamp(0.2rem, 1vw, 2rem);
+    position: fixed; /* must be fixed for animation */
+    background: white;
+    padding: 0.5em 1em;
+    border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+  
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.menu_button:hover #popup_menu {
+    opacity: 1;
+    visibility: visible;
+ 
+}
+
+
+#popup_menu a {
+    display: block;/* each link on separate line || Jeder Link in eigener Zeile */
+    padding: 0.5em 1em;
+    color: #002f6c;
+    text-decoration: none;
+}
+
+#popup_menu a:hover {
+    background-color: #f0f0f0;/* highlight on hover || Hervorhebung beim Hover */
+}
+
+/*#endregion Header*/
+
+
+
+/*#region Topics Sections*/
+
+/*Topic one*/
+#topic_one{
+	position:relative;
+ 	overflow: hidden; /*text or images should spill out of the frame*/
+	display:flex;
+	width: 65%;
+	border-radius:15px;
+	margin:auto; /* Centers the element horizontally || Zentriert das Element horizontal */
+	background-color:white;
+	z-index:2; /*it needs to be behind the header*/
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	transition: 0.5s;
+	aspect-ratio:2 / 1.3; /* Locks height relative to width to avoid distortion || Fixiert das Seitenverhältnis zur Vermeidung von Verzerrung */
+    margin-top: calc(var(--header-main) + var(--header-second) + 3rem);/* Dynamically offsets content below both headers || Dynamischer Abstand unter beiden Headern */
+
+
+}
+
+#topic_one:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px rgba(0,0,0,0.6);
+
+}
+
+/*needed to move the image seperatly because it wasnt centered*/
+#topic_one img{
+position:relative;
+left:-7%;
+}
+
+
+/*class to configure the text inside of the sections*/
+.text_panel {
+    position: absolute;/* Removes element from normal flow and anchors it to parent || Entfernt Element aus dem normalen Layoutfluss */
+    bottom: 0; /* anchor to bottom */
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(255,255,255,0.85); /* Semi-transparent background for readability || Halbtransparenter Hintergrund für bessere Lesbarkeit */
+    border-radius: 7px;
+    padding: 20px 20px 5px 20px;
+    text-align: left;
+    font-size: clamp(0.8rem, 0.9vw, 1rem);/* Responsive font size with min & max limits || Responsive Schriftgröße mit Mindest- und Höchstwert */
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    z-index: 1;
+    transform: translateY(100%);   /* Moves panel fully below the section (hidden state) || Verschiebt das Panel vollständig nach unten (versteckt) */
+	color: rgb(0, 0, 0);
+}
+
+#topic_one:hover .text_panel {
+    transform: translateY(0); /* slide up */
+	/* When #topic_one is hovered, the child .text_panel slides up || Wenn #topic_one gehovert wird, fährt das Kindelement .text_panel hoch */
+}
+
+
+
+/*Configures the Table inside the sections (for design purposes)*/
+.topic_data {
+    padding: 0.5vw 2vw ; /* padding scales with viewport width */
+    text-align: left;
+    font-size: clamp(0.4rem, 1.3vw, 2rem); /* responsive font */
+    word-wrap: break-word;  /* Prevents long words from breaking layout || Verhindert Layoutbruch durch lange Wörter */
+}
+
+
+
+
+
+/*Reusable topic sections*/
+.topics{
+	overflow: hidden;
+	position:relative;
+	width: 65%;
+	border-radius: 7px;
+	gap: 100px;
+	margin:auto;
+	margin-top:10%;
+	display:flex;
+	background-color:white;
+	z-index:0;
+	box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	transition: 0.5s;
+	aspect-ratio:2 / 1.3;
+	
+}
+/*Picture offset for visual centering*/
+#game_physics_img{
+	position:relative;
+	left:-11%;
+}
+
+/*Hover logic reused for all .topics elements*/
+.topics:hover .text_panel {
+transform: translateY(0); /* slide up */
+
+}
+
+
+/*effect that slightly scales the size of the sections*/
+.topics:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px rgba(0,0,0,0.6);
+
+}
+/*#endregion Topics Sections*/
+
+/*At the very bottom an invisible box to create a space (for design purposes)*/
+#free_space{
+	background-color: white;
+	height:20%;
+	width:100%;
+	gap: 100px;
+	margin: 100px;
+	opacity:0;
+}
+
