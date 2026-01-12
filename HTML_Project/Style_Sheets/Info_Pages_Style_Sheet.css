@@ -560,7 +560,9 @@ transform: translateY(-125%);
 	border-radius: 4%;
 }
 /*#endregion 2D vs 3D Images*/
-
+#Sprite_Model_comparison{
+	width: 40%;
+}
 
 /* ===== Usage Images ===== */
 	/*#region Usage Images*/
@@ -648,6 +650,7 @@ transform: translateY(-125%);
 	border-radius: 4%;
 }
 /*#endregion videos*/
+
 
 
 
