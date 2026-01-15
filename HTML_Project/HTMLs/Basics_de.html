@@ -268,16 +268,13 @@ Ein grundlegender Spielablauf folgt üblicherweise diesen Schritten:</p>
           <li>Feindliches Verhalten</li>
           <li>Physik und Kollisionen</li>
           <li>Punktestand und Spielregeln</li>
+          </ul></ul></li>
           <li>
             Rendere (Zeichne) das Spiel
             <ul>
               <li>Das Spiel aktualisiert den Bildschirm mit den angepassten Positionen, Animationen und Grafiken.</li>
             </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+      	</li>
 </ul>
 
 <p>Diese Schleife wiederholt sich viele Male pro Sekunde, oft 60 Mal pro Sekunde (60 FPS).</p>
@@ -294,7 +291,8 @@ Dies ist einfacher umzusetzen, aber Bewegung und Physik können sich inkonsisten
 
 
 Viele moderne Spiele verwenden einen Hybridansatz, der beide Methoden kombiniert, um ein flüssigeres Spielerlebnis zu ermöglichen.
-<p>Beispiel einer einfachen Spielschleife (Pseudocode)</p>
+<p></p>
+<h4>Beispiel einer einfachen Spielschleife (Pseudocode)</h4>
 Hier ist ein sehr einfaches Beispiel dafür, wie eine Spielschleife aussehen könnte:
 
 <!--I wanted to display a gameloop so i made a box and coloured it accordingly-->
@@ -1062,7 +1060,7 @@ Auf den ersten Blick mag die Eingabeverarbeitung wie eine einfache Reihe von Wen
 
 
 <details  class="code_example_summary">
-  <summary>See the pseudocode example for how not to do it</summary>
+  <summary>Im Pseudocode-Beispiel sehen Sie, wie es nicht geht</summary>
 <div class="code-panel_eg"><code>
 <span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move"</span>);</span>
 <span class="line_eg"><span class="keyword">const</span> <span class="variable">step</span> = <span class="number">0.2</span>;</span>
@@ -1278,7 +1276,7 @@ Steuerungen zu ermöglichen.
 
 </svg>
 <details  class="code_example_summary">
-  <summary>See the code used above for how to do it</summary>
+  <summary>Im oben verwendeten Code finden Sie eine Anleitung dazu</summary>
 <div class="code-panel_eg"><code>
 <span class="line_eg"><span class="keyword">const</span> <span class="variable">redPoint</span> = <span class="method">document.getElementById</span>(<span class="string">"red_point_to_move_correct"</span>);</span>
 <span class="line_eg"><span class="keyword">const</span> <span class="variable">pointLocation</span> = <span class="method">document.getElementById</span>(<span class="string">"point_location_of_correct_eg"</span>);</span>
@@ -1651,5 +1649,4 @@ Jedes hochentwickelte Spielsystem (KI, Physik-Interaktionen, Kampf, Benutzerober
 	
 	
 	
-
 </html>
