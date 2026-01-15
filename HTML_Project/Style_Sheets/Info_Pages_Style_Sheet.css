@@ -465,25 +465,7 @@ background-color:#424647;
 	   CSS-Variable zur Skalierung (1 Einheit = 30px) */
 }
 
-/* Axes drawn using pseudo-elements || Achsen werden mit Pseudo-Elementen gezeichnet */
-.graph::before,
-.graph::after {
-  content: "";
-  position: absolute;
-  background: black;
-}
 
-.graph::before { /* x-axis || x-Achse */
-  width: 100%;
-  height: 1px;
-  top: 50%;
-}
-
-.graph::after { /* y-axis || y-Achse */
-  height: 100%;
-  width: 1px;
-  left: 50%;
-}
 /* Point positioned using CSS variables ||Punktposition über CSS-Variablen */
 .point {
   position: absolute;
@@ -560,9 +542,11 @@ transform: translateY(-125%);
 	border-radius: 4%;
 }
 /*#endregion 2D vs 3D Images*/
+
 #Sprite_Model_comparison{
 	width: 40%;
 }
+
 
 /* ===== Usage Images ===== */
 	/*#region Usage Images*/
@@ -650,7 +634,6 @@ transform: translateY(-125%);
 	border-radius: 4%;
 }
 /*#endregion videos*/
-
 
 
 
