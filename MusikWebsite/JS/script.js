@@ -536,6 +536,7 @@ playButton.onclick = async () => {
     }
 
     if (!isPlaying) {
+        currentStep = 0;
         startLoop();
         isPlaying = true;
         playButton.innerText = "⏹ Stop";
