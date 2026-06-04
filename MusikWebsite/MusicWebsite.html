@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Drumbit</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<h1>Mini Drumbit</h1>
+
+<div class="top-controls">
+    <label>Master Volume</label>
+    <input type="range" id="masterVolume" min="0" max="1" step="0.01" value="0.8">
+
+    <label>BPM: <span id="bpmValue">110</span></label>
+    <input type="range" id="bpmSlider" min="60" max="180" value="110">
+
+    <button id="playButton">▶ Play</button>
+</div>
+
+<div id="sequencerWrapper">
+    <div id="sequencer" class="grid"></div>
+</div>
+
+<div id="piano" class="piano"></div>
+<label>Tone</label>
+
+<select id="pianoTone">
+    <option value="piano">Type I</option>
+    <option value="synth">Type II</option>
+    <option value="strings">Type III</option>
+    <option value="organ">Type IV</option>
+</select>
+<div class="piano-controls">
+
+    <label>Piano Pitch:</label>
+
+    <input
+        type="range"
+        id="pianoPitch"
+        min="-24"
+        max="24"
+        value="0"
+    >
+
+    <span id="pianoPitchLabel">0</span>
+
+</div>
+<div class="piano-controls" id="piano-volume">
+<label>Piano Volume</label>
+<input type="range"
+       id="pianoVolume"
+       min="0"
+       max="1"
+       step="0.01"
+       value="0.8">
+
+<span id="pianoVolumeLabel">80%</span>
+</div>
+<a href="info_page.html" id="info_page_button" class="btn">
+	To Information Page
+</a>
+
+
+<script src="JS/script.js"></script>
+</body>
+</html>
