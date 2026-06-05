@@ -120,7 +120,7 @@ span {
     
     position: relative;
     bottom: -100px;
-    left: -572px;
+    left: -173px;
     height: 140px;
     margin-top: 20px;
     width: fit-content;
@@ -131,8 +131,8 @@ span {
 
 #pianoTone {
     position: relative;
-    left: -300px;
-    top: -90px;
+    left: 505px;
+    top: -123px;
     padding: 6px;
     font-size: 14px;
 }
@@ -143,11 +143,11 @@ span {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    left: -760px;
-    top: -128px;
+    left: 633px;
+    top: -115px;
 }
 #piano-volume{
-    left: -758px;
+    left: 648px;
 }
 .piano-key {
     position: absolute;
@@ -202,7 +202,7 @@ span {
     position: relative;
     height: 140px;
     width: 140px;
-    left: 1600px;
+    left: 13px;
     border-radius: 16px;
     background: #222;
     overflow: auto;
