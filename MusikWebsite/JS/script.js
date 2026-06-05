@@ -762,6 +762,7 @@ layout.forEach(n => {
 
 let whiteIndex = 0;
 const whitePositions = [];
+let activeTouchKey = null;
 
 layout.forEach(n => {
     const key = document.createElement("div");
@@ -769,7 +770,48 @@ layout.forEach(n => {
 
     key.innerText = n.note;
     
+    key.addEventListener("touchstart", (e) => {
+        e.preventDefault();
 
+        activeTouchKey = n.freq;
+        startNote(n.freq);
+    });
+
+    document.addEventListener("touchmove", (e) => {
+
+        const touch = e.touches[0];
+        if (!touch) return;
+
+        const element =
+            document.elementFromPoint(
+                touch.clientX,
+                touch.clientY
+            );
+
+        if (!element?.classList.contains("piano-key"))
+            return;
+
+        const note = layout.find(x => x.element === element);
+        if (!note) return;
+
+        if (activeTouchKey !== note.freq) {
+
+            if (activeTouchKey)
+                stopNote(activeTouchKey);
+
+            activeTouchKey = note.freq;
+            startNote(note.freq);
+        }
+    });
+
+
+    document.addEventListener("touchend", () => {
+
+        if (activeTouchKey) {
+            stopNote(activeTouchKey);
+            activeTouchKey = null;
+        }
+    });
     
 
     key.onmousedown = (e) => {
