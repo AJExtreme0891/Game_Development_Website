@@ -140,15 +140,14 @@ span {
 .piano-controls{
     position: relative;
     display: flex;
+    width: max-content;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    left: 633px;
+    left: 1436px;
     top: -115px;
 }
-#piano-volume{
-    left: 648px;
-}
+
 .piano-key {
     position: absolute;
     user-select: none;
