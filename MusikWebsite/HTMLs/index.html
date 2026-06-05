@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Pop Loop Creator</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<h1> Pop Loop Creator</h1>
+
+<div class="container" id="sequencer"></div>
+
+<div class="controls">
+    <button class="play" id="playButton">Start / Stop</button>
+</div>
+
+<div class="controls">
+    <button class="play" id="playButton">Start / Stop</button>
+
+    <div style="margin-top:15px;">
+        <label>BPM: <span id="bpmValue">120</span></label><br>
+        <input type="range" id="bpmSlider" min="60" max="180" value="120">
+    </div>
+
+    <p id="midiStatus">MIDI: nicht verbunden</p>
+</div>
+
+<script src="../JS/script.js"></script>
+</body>
+</html>
