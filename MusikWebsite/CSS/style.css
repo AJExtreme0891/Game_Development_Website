@@ -120,7 +120,7 @@ span {
     
     position: relative;
     bottom: -100px;
-    left: -240px;
+    left: -572px;
     height: 140px;
     margin-top: 20px;
     width: fit-content;
@@ -143,11 +143,11 @@ span {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    left: -400px;
-    top: -60px;
+    left: -760px;
+    top: -128px;
 }
 #piano-volume{
-    left: -420px;
+    left: -758px;
 }
 .piano-key {
     position: absolute;
