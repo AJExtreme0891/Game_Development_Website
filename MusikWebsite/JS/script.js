@@ -808,9 +808,9 @@ layout.forEach(n => {
     document.addEventListener("touchend", () => {
 
         if (activeTouchKey) {
-            recordNoteEnd("touch_" + n.freq, n.freq);
             stopNote(activeTouchKey);
             activeTouchKey = null;
+            recordNoteEnd("touch_" + n.freq, n.freq);
         }
     });
     
